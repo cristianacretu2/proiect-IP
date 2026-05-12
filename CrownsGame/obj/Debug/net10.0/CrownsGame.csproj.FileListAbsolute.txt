@@ -1,0 +1,15 @@
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/bin/Debug/net10.0/CrownsGame
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/bin/Debug/net10.0/CrownsGame.deps.json
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/bin/Debug/net10.0/CrownsGame.runtimeconfig.json
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/bin/Debug/net10.0/CrownsGame.dll
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/bin/Debug/net10.0/CrownsGame.pdb
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.AssemblyInfoInputs.cache
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.AssemblyInfo.cs
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.csproj.CoreCompileInputs.cache
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.sourcelink.json
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.dll
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/refint/CrownsGame.dll
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.pdb
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/CrownsGame.genruntimeconfig.cache
+/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/obj/Debug/net10.0/ref/CrownsGame.dll
