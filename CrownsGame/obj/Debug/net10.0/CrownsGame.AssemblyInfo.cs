@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrownsGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad3c8d304cf4751d65310e7a7f5f224b43046dd9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2149e567a33a504f90dead0bad3546e64f6cfa3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrownsGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrownsGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
