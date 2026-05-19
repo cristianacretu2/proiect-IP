@@ -1,11 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="CrownsGame.UI.Views.MainWindow"
-        Title="Crowns Game - 8x8" Width="450" Height="600"
+        Title="Crowns Game - AI Edition" Width="500" Height="700"
         WindowStartupLocation="CenterScreen"
         Background="#F0F0F0">
 
-    <StackPanel Margin="20" Spacing="10">
+    <StackPanel Margin="20" Spacing="15">
+        <TextBlock Text="Dificultate:" FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+            <Button Content="Easy (1👑)" Click="OnEasyClick" Background="#C8E6C9" Width="90" HorizontalContentAlignment="Center"/>
+            <Button Content="Medium (2👑)" Click="OnMediumClick" Background="#FFF9C4" Width="90" HorizontalContentAlignment="Center"/>
+            <Button Content="Hard (3👑)" Click="OnHardClick" Background="#FFCCBC" Width="90" HorizontalContentAlignment="Center"/>
+        </StackPanel>
+
+        <Separator Height="1" Background="#DDD"/>
+
         <TextBlock Name="StatusLabel" Text="Scor: 0 | Greșeli: 0" 
                    FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
         
@@ -14,8 +23,12 @@
         </Border>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20" Margin="10">
-            <Button Content="Undo" Width="100" HorizontalContentAlignment="Center" Click="OnUndoClick"/>
-            <Button Content="New Game" Width="100" HorizontalContentAlignment="Center" Click="OnNewGameClick"/>
+            <Button Content="Undo" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Click="OnUndoClick"/>
+            <Button Content="New Game" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Click="OnNewGameClick"/>
+            <Button Content="💡 Hint" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                    Click="OnHintClick" Background="#E1F5FE"/>
+            <Button Content="🔍 Mini Solver" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
+                    Click="OnSolveCheckClick" Background="#F3E5F5"/>
         </StackPanel>
         
         <TextBlock Text="Click stânga: Coroană -> X -> Gol" 
