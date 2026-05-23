@@ -1,15 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\CrownsGame.Core\CrownsGame.Core.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
-    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="CrownsGame.UI\**" />
-    <EmbeddedResource Remove="CrownsGame.UI\**" />
-    <None Remove="CrownsGame.UI\**" />
-  </ItemGroup>
 </Project>

@@ -1,20 +1,38 @@
+/*
+ * Scopul fisierului: Implementeaza un algoritm de cautare pentru a determina daca o configuratie a tablei are solutie.
+ * Autor: 
+ */
+
 using System.Collections.Generic;
 using CrownsGame.Core;
 using CrownsGame.Logic;
 
 namespace CrownsGame.AI
 {
+    /// <summary>
+    /// Componenta de calcul care utilizeaza backtracking pentru a verifica potentialul de finalizare a unui joc.
+    /// </summary>
     public class MiniSolver
     {
         private readonly IGameStrategy _strategy;
         private int _n; // dimensiunea boardului
         private int _k; // coroane per rând/col/regiune
 
+        /// <summary>
+        /// Initializeaza solver-ul cu strategia de joc activa.
+        /// </summary>
+        /// <param name="validator">Validatorul pentru regulile de joc.</param>
+        /// <param name="strategy">Strategia care defineste conditiile de victorie.</param>
         public MiniSolver(Validator validator, IGameStrategy strategy)
         {
             _strategy = strategy;
         }
 
+        /// <summary>
+        /// Determina daca starea curenta a tablei mai permite plasarea coroanelor ramase conform regulilor.
+        /// </summary>
+        /// <param name="board">Tabla de joc de analizat.</param>
+        /// <returns>True daca exista cel putin o solutie valida pornind de la starea actuala.</returns>
         public bool IsSolvable(Board board)
         {
             _n = board.Size;
@@ -29,6 +47,11 @@ namespace CrownsGame.AI
             return Solve(board, 0, rowCount, colCount, regionCount, placed, adjCount);
         }
 
+
+        /// <summary>
+        /// Metoda recursiva care exploreaza posibilitatile de plasare a coroanelor pe fiecare rand.
+        /// </summary>
+        /// <returns>Statusul explorarii caii curente.</returns>
         private bool Solve(Board board, int row,
             int[] rowCount, int[] colCount, int[] regionCount,
             bool[,] placed, int[,] adjCount)
@@ -56,6 +79,20 @@ namespace CrownsGame.AI
                               rowCount, colCount, regionCount, placed, adjCount);
         }
 
+        /// <summary>
+        /// Metoda recursiva de tip helper care incearca plasarea numarului necesar de coroane pe un singur rand, 
+        /// respectand restrictiile de coloana, regiune si adiacenta.
+        /// </summary>
+        /// <param name="board">Instanta tablei de joc pentru accesarea datelor despre regiuni.</param>
+        /// <param name="row">Indexul randului curent in care se fac plasarile.</param>
+        /// <param name="col">Indexul coloanei curente care este evaluata.</param>
+        /// <param name="remaining">Numarul de coroane care mai trebuie plasate pe randul curent pentru a indeplini conditia de victorie.</param>
+        /// <param name="rowCount">Vector pentru monitorizarea numarului de coroane pe fiecare rand.</param>
+        /// <param name="colCount">Vector pentru monitorizarea numarului de coroane pe fiecare coloana.</param>
+        /// <param name="regionCount">Vector pentru monitorizarea distributiei coroanelor pe regiuni colorate.</param>
+        /// <param name="placed">Matrice booleana care retine locatiile unde au fost deja plasate coroane.</param>
+        /// <param name="adjCount">Matrice de intregi care urmareste celulele blocate de coroanele vecine (regula de non-proximitate).</param>
+        /// <returns>True daca s-a gasit o configuratie valida pentru restul tablei pornind de la aceasta plasare, false in caz contrar.</returns>
         private bool PlaceInRow(Board board, int row, int col, int remaining,
             int[] rowCount, int[] colCount, int[] regionCount,
             bool[,] placed, int[,] adjCount)
@@ -96,6 +133,13 @@ namespace CrownsGame.AI
                               rowCount, colCount, regionCount, placed, adjCount);
         }
 
+        /// <summary>
+        /// Gestioneaza marcarea celulelor adiacente pentru a respecta regula de non-proximitate a coroanelor.
+        /// </summary>
+        /// <param name="adj">Matricea de proximitate.</param>
+        /// <param name="row">Randul sursa.</param>
+        /// <param name="col">Coloana sursa.</param>
+        /// <param name="delta">Valoarea de adunare/scadere pentru marcare (1 sau -1).</param>
         private void AddAdj(int[,] adj, int row, int col, int delta)
         {
             for (int dr = -1; dr <= 1; dr++)
