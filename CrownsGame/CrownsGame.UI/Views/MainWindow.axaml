@@ -1,24 +1,55 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="CrownsGame.UI.Views.MainWindow"
-        Title="Crowns Game - 8x8" Width="450" Height="600"
+        Title="Crowns Game" Width="720" Height="940"
         WindowStartupLocation="CenterScreen"
-        Background="#F0F0F0">
+        Background="#1a1a2e">
 
-    <StackPanel Margin="20" Spacing="10">
-        <TextBlock Name="StatusLabel" Text="Scor: 0 | Greșeli: 0" 
-                   FontSize="18" HorizontalAlignment="Center" FontWeight="Bold"/>
-        
-        <Border BorderBrush="#333" BorderThickness="3" CornerRadius="5" Padding="5" Background="White">
-            <Grid Name="GameGrid" Width="384" Height="384" />
+    <StackPanel Margin="20" Spacing="12">
+
+        <!-- Titlu -->
+        <TextBlock Text="👑 CROWNS GAME" FontSize="22" FontWeight="Bold"
+                   HorizontalAlignment="Center" Foreground="#e0c97f"/>
+
+        <!-- Dificultate -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="8">
+            <Button Name="BtnEasy"   Content="Easy"   Click="OnEasyClick"
+                    Width="100" Height="34" FontWeight="SemiBold"/>
+            <Button Name="BtnMedium" Content="Medium" Click="OnMediumClick"
+                    Width="100" Height="34" FontWeight="SemiBold"/>
+            <Button Name="BtnHard"   Content="Hard"   Click="OnHardClick"
+                    Width="100" Height="34" FontWeight="SemiBold"/>
+            <Button Name="BtnDaily" Content="Start Daily Challenge (1 min)" 
+                    Click="OnDailyChallengeClick" Background="#2a2a4a" BorderBrush="#FFD54F"
+                    BorderThickness="1" HorizontalAlignment="Center" Width="316" Height="34"/>
+        </StackPanel>
+
+        <!-- Status -->
+        <Grid ColumnDefinitions="*,Auto,*" Margin="10,0">
+            <TextBlock Name="StatusLabel" Grid.Column="0" Text="Scor: 0 | Greșeli: 0"
+                       FontSize="16" FontWeight="SemiBold" Foreground="#d0d0e0" VerticalAlignment="Center"/>
+            
+            <TextBlock Name="TimerLabel" Grid.Column="1" Text="" 
+                       FontSize="20" FontWeight="Bold" Foreground="#ff5555" VerticalAlignment="Center"/>
+        </Grid>
+
+
+        <!-- Grid joc -->
+        <Border BorderBrush="#e0c97f" BorderThickness="2"
+                CornerRadius="6" Padding="4" Background="#12122a"
+                HorizontalAlignment="Center">
+            <Grid Name="GameGrid"/>
         </Border>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20" Margin="10">
-            <Button Content="Undo" Width="100" HorizontalContentAlignment="Center" Click="OnUndoClick"/>
-            <Button Content="New Game" Width="100" HorizontalContentAlignment="Center" Click="OnNewGameClick"/>
+        <!-- Controale -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+            <Button Content="↩ Undo"      Click="OnUndoClick"       Width="100" Height="34"/>
+            <Button Content="⟳ New Game"  Click="OnNewGameClick"    Width="100" Height="34"/>
+            <Button Content="💡 Hint"     Click="OnHintClick"       Width="100" Height="34"/>
+            <Button Content="🔍 Solver"   Click="OnSolveCheckClick" Width="100" Height="34"/>
         </StackPanel>
-        
-        <TextBlock Text="Click stânga: Coroană -> X -> Gol" 
-                   FontSize="12" Foreground="Gray" HorizontalAlignment="Center"/>
+
+        <TextBlock Text="Click: Gol → Coroană → X → Gol"
+                   FontSize="11" Foreground="#888" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

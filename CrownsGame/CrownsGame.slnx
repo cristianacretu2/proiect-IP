@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CrownsGame.Tests/CrownsGame.Tests.csproj" />
+  <Project Path="CrownsGame.UI/CrownsGame.UI.csproj" />
+</Solution>

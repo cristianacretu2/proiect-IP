@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CrownsGame.csproj" />
+    <ProjectReference Include="..\CrownsGame.AI\CrownsGame.AI.csproj" />
+    <ProjectReference Include="..\CrownsGame.Application\CrownsGame.Application.csproj" />
+    <ProjectReference Include="..\CrownsGame.Core\CrownsGame.Core.csproj" />
+    <ProjectReference Include="..\CrownsGame.Logic\CrownsGame.Logic.csproj" />
   </ItemGroup>
 </Project>

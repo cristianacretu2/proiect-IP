@@ -11,5 +11,10 @@ namespace CrownsGame.Logic
         {
             return 10; // Un grid de 10x10 pentru Medium
         }
+
+        public string GetDifficultyName()
+        {
+            return "Medium";
+        }
     }
 }
