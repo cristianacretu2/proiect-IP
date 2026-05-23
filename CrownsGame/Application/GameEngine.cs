@@ -1,11 +1,9 @@
 using CrownsGame.Core;
 using CrownsGame.Logic;
+using System.Collections.Generic;
 
 namespace CrownsGame.Application
 {
-    /// <summary>
-    /// Motorul principal care coordonează fluxul jocului.
-    /// </summary>
     public class GameEngine
     {
         private GameState _state;
@@ -19,8 +17,6 @@ namespace CrownsGame.Application
         public GameEngine(IGameStrategy strategy)
         {
             _strategy = strategy;
-            
-            // Folosim generatorul tău existent
             BoardGenerator generator = new BoardGenerator();
             Board newBoard = generator.Generate(strategy);
 
@@ -30,9 +26,6 @@ namespace CrownsGame.Application
             _inputHandler = new InputHandler();
         }
 
-        /// <summary>
-        /// Metodă apelată de UI când se dă click pe o celulă.
-        /// </summary>
         public void HandleCellClick(int row, int col)
         {
             if (_state.IsVictory) return;
@@ -40,18 +33,18 @@ namespace CrownsGame.Application
             Cell cell = _state.Board.GetCell(row, col);
             CellState nextState = _inputHandler.GetNextState(cell.State);
 
-            // Dacă utilizatorul vrea să pună o coroană, verificăm prin Validatorul tău
+            // Validăm doar mutările care plasează o coroană
             if (nextState == CellState.Crown)
             {
                 if (!_validator.IsMoveValid(_state.Board, row, col))
                 {
                     _state.Mistakes++;
                     _state.Score -= 10;
-                    // Putem alege să nu permitem mutarea sau să o marcăm ca eroare
+                    // Chiar dacă e invalidă, o lăsăm pe tablă pentru ca jucătorul 
+                    // să vadă eroarea, dar CheckWinCondition nu va da Victory.
                 }
             }
 
-            // Executăm mutarea folosind MoveCommand-ul tău
             MoveCommand command = new MoveCommand(_state.Board, row, col, nextState);
             _commandManager.ExecuteCommand(command);
 
@@ -60,24 +53,77 @@ namespace CrownsGame.Application
 
         private void CheckWinCondition()
         {
-            // O logică simplă de victorie: numărul de coroane totale 
-            // trebuie să fie egal cu (N coroane per rând) * (Dimensiune Board)
-            int totalRequired = _strategy.GetRequiredCrowns() * _state.Board.Size;
-            int currentCrowns = 0;
+            int requiredPerGroup = _strategy.GetRequiredCrowns();
+            int totalRequired = requiredPerGroup * _state.Board.Size;
+            int currentCrowns = CountTotalCrowns();
 
-            for (int r = 0; r < _state.Board.Size; r++)
-            {
-                for (int c = 0; c < _state.Board.Size; c++)
-                {
-                    if (_state.Board.GetCell(r, c).State == CellState.Crown)
-                        currentCrowns++;
-                }
-            }
-
+            // Pasul 1: Verificăm cantitatea
             if (currentCrowns == totalRequired)
             {
-                _state.IsVictory = true;
+                // Pasul 2: Verificăm calitatea (dacă toate regulile sunt respectate)
+                if (ValidateFullBoard(requiredPerGroup))
+                {
+                    _state.IsVictory = true;
+                    _state.Score += 100; // Bonus de victorie
+                }
             }
+        }
+
+        private int CountTotalCrowns()
+        {
+            int count = 0;
+            for (int r = 0; r < _state.Board.Size; r++)
+                for (int c = 0; c < _state.Board.Size; c++)
+                    if (_state.Board.GetCell(r, c).State == CellState.Crown) count++;
+            return count;
+        }
+
+        /// <summary>
+        /// Verifică dacă întreaga tablă respectă regulile jocului.
+        /// </summary>
+        private bool ValidateFullBoard(int required)
+        {
+            int size = _state.Board.Size;
+            Dictionary<int, int> regionCounts = new Dictionary<int, int>();
+
+            for (int r = 0; r < size; r++)
+            {
+                int rowCount = 0;
+                int colCount = 0;
+
+                for (int c = 0; c < size; c++)
+                {
+                    // Verificare Rânduri
+                    if (_state.Board.GetCell(r, c).State == CellState.Crown) rowCount++;
+                    // Verificare Coloane
+                    if (_state.Board.GetCell(c, r).State == CellState.Crown) colCount++;
+
+                    // Verificare Regiuni
+                    if (_state.Board.GetCell(r, c).State == CellState.Crown)
+                    {
+                        int regId = _state.Board.GetCell(r, c).RegionId;
+                        regionCounts[regId] = regionCounts.GetValueOrDefault(regId, 0) + 1;
+
+                        // Verificare Adiacență (folosim validatorul tău existent)
+                        // Temporar scoatem coroana pentru a nu se auto-invalida
+                        _state.Board.SetCellState(r, c, CellState.Empty);
+                        bool isPosValid = _validator.IsMoveValid(_state.Board, r, c);
+                        _state.Board.SetCellState(r, c, CellState.Crown);
+
+                        if (!isPosValid) return false;
+                    }
+                }
+
+                if (rowCount != required || colCount != required) return false;
+            }
+
+            // Verificăm dacă toate regiunile au numărul corect de coroane
+            foreach (var count in regionCounts.Values)
+            {
+                if (count != required) return false;
+            }
+
+            return true;
         }
 
         public void Undo() => _commandManager.Undo();

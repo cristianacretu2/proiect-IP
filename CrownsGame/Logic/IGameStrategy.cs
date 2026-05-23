@@ -6,6 +6,9 @@ namespace CrownsGame.Logic
     /// </summary>
     public interface IGameStrategy
     {
+
+        string GetDifficultyName();
+        
         /// <summary>
         /// Determina numarul de coroane necesare pentru configurația curenta.
         /// </summary>
