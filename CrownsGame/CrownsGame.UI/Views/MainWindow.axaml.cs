@@ -7,6 +7,7 @@ using CrownsGame.Logic;
 using CrownsGame.Core;
 using CrownsGame.AI;
 using System;
+using System.Diagnostics;
 
 namespace CrownsGame.UI.Views;
 
@@ -258,6 +259,23 @@ public partial class MainWindow : Window
 
     private void OnNewGameClick(object? s, RoutedEventArgs e) => StartNewGame(_currentStrategy);
 
+    private void OnHelpClick(object? s, RoutedEventArgs e)
+    {
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "Manual de utilizare - CrownsGame.chm",
+                UseShellExecute = true
+            });
+        }
+        catch (Exception)
+        {
+            var label = this.FindControl<TextBlock>("StatusLabel")!;
+            label.Text = "Eroare: Nu s-a putut deschide fișierul de ajutor.";
+            label.Foreground = new SolidColorBrush(Colors.OrangeRed);
+        }
+    }
     // ─── AI ───────────────────────────────────────────────────────────────────
 
     private void OnHintClick(object? s, RoutedEventArgs e)
@@ -366,6 +384,6 @@ public partial class MainWindow : Window
     private static Color Darken(Color c, double amount) => Color.FromRgb(
         (byte)(c.R * (1 - amount)),
         (byte)(c.G * (1 - amount)),
-        (byte)(c.B * (1 - amount)));
-
+        (byte)(c.B * (1 - amount))
+    );
 }

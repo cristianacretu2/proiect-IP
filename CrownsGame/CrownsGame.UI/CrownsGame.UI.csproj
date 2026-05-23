@@ -29,4 +29,9 @@
     <ProjectReference Include="..\CrownsGame.Core\CrownsGame.Core.csproj" />
     <ProjectReference Include="..\CrownsGame.Logic\CrownsGame.Logic.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Manual de utilizare - CrownsGame.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
