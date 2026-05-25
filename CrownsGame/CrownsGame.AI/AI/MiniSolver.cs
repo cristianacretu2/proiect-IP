@@ -56,6 +56,7 @@ namespace CrownsGame.AI
             int[] rowCount, int[] colCount, int[] regionCount,
             bool[,] placed, int[,] adjCount)
         {
+            // Verificarea conditiilor de oprire si validarea coloanelor/regiunilor la final.
             if (row == _n)
             {
                 for (int c = 0; c < _n; c++)
@@ -97,12 +98,15 @@ namespace CrownsGame.AI
             int[] rowCount, int[] colCount, int[] regionCount,
             bool[,] placed, int[,] adjCount)
         {
+            // Daca pe randul curent s-au plasat toate coroanele necesare, trecem la urmatorul rand.
             if (remaining == 0)
                 return Solve(board, row + 1, rowCount, colCount, regionCount, placed, adjCount);
+            // Verificari de siguranta pentru limitele tablei si posibilitatea matematica de a mai plasa coroane.
             if (col >= _n) return false;
             if (_n - col < remaining) return false;
 
             int reg = board.GetCell(row, col).RegionId;
+            // Verificarea tuturor constrangerilor logice inainte de a plasa o coroana in celula curenta.
             bool canPlace = !placed[row, col]
                          && adjCount[row, col] == 0
                          && colCount[col] < _k
@@ -110,25 +114,26 @@ namespace CrownsGame.AI
 
             if (canPlace)
             {
-                // Plasează
+                // Se marcheaza plasarea si se actualizeaza starea structurilor de monitorizare (Pasul de inaintare in Backtracking).
                 placed[row, col] = true;
                 rowCount[row]++;
                 colCount[col]++;
                 regionCount[reg]++;
                 AddAdj(adjCount, row, col, +1);
 
+                // Se exploreaza recursiv posibilitatea plasarii urmatoarei coroane pe aceeasi linie.
                 if (PlaceInRow(board, row, col + 1, remaining - 1,
                                rowCount, colCount, regionCount, placed, adjCount))
                     return true;
 
-                // Backtrack
+                // Daca mutarea nu a dus la o solutie, se anuleaza modificarile (Pasul de revenire in Backtracking).
                 placed[row, col] = false;
                 rowCount[row]--;
                 colCount[col]--;
                 regionCount[reg]--;
                 AddAdj(adjCount, row, col, -1);
             }
-
+            // Se incearca si varianta in care celula curenta ramane libera, trecand la urmatoarea coloana.
             return PlaceInRow(board, row, col + 1, remaining,
                               rowCount, colCount, regionCount, placed, adjCount);
         }

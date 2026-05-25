@@ -1,3 +1,9 @@
+/*
+ * Scopul fisierului: Implementeaza logica de interfata (Code-behind) pentru fereastra principala, 
+ * gestionand interactiunea dintre utilizator si motorul de joc.
+ * Autor: 
+ */
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
@@ -11,6 +17,9 @@ using System.Diagnostics;
 
 namespace CrownsGame.UI.Views;
 
+/// <summary>
+/// Fereastra principala a aplicatiei care gestioneaza grid-ul de joc, butoanele de control si afisarea progresului.
+/// </summary>
 public partial class MainWindow : Window
 {
     private GameEngine?   _engine;
@@ -18,11 +27,10 @@ public partial class MainWindow : Window
     private MiniSolver?   _miniSolver;
     private IGameStrategy _currentStrategy = new EasyStrategy();
 
-    // pentru daily challenge 
+    // Pentru daily challenge 
     private DailyChallengeManager? _dailyManager;
     private bool _isDailyMode = false;
 
-    // Paletă închisă, contrast ridicat, distinctă vizual
     private readonly Color[] _regionColors =
     {
         Color.FromRgb(185,  65,  65),   // 0  roșu mat
@@ -42,12 +50,20 @@ public partial class MainWindow : Window
         Color.FromRgb( 60, 120, 150),   // 14 albastru-gri
     };
 
+    /// <summary>
+    /// Constructorul ferestrei: initializeaza componentele vizuale si porneste o partida noua pe dificultate Easy.
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();
         StartNewGame(new EasyStrategy());
     }
 
+
+    /// <summary>
+    /// Initializeaza o sesiune de joc noua, asigurandu-se prin incercari repetate ca tabla generata are o solutie valida.
+    /// </summary>
+    /// <param name="strategy">Strategia de dificultate aleasa.</param>
     private void StartNewGame(IGameStrategy strategy)
     {
         _currentStrategy = strategy;
@@ -56,6 +72,7 @@ public partial class MainWindow : Window
         int attempts = 0;
         bool isSolvable = false;
 
+        // Se incearca generarea unui board pana cand solver-ul confirma ca acesta poate fi rezolvat.
         while (!isSolvable && attempts < 10)
         {
             _engine    = new GameEngine(strategy);
@@ -97,8 +114,10 @@ public partial class MainWindow : Window
     UpdateUI();
 } */
 
-    // ─── Grid ─────────────────────────────────────────────────────────────────
-
+    
+    /// <summary>
+    /// Construieste dinamic matricea de butoane in interfata grafica, adaptand dimensiunea celulelor la marimea tablei.
+    /// </summary>
     private void CreateGrid()
     {
         var grid  = this.FindControl<Grid>("GameGrid")!;
@@ -109,7 +128,7 @@ public partial class MainWindow : Window
         grid.ColumnDefinitions.Clear();
         grid.Children.Clear();
 
-        // Dimensiune fixă per celulă, scalată după grilă
+        // Calculam dimensiunea celulei pentru a incapea in containerul de 460px.
         double cellSize = Math.Min(68, 460.0 / size);
 
         for (int i = 0; i < size; i++)
@@ -157,8 +176,10 @@ public partial class MainWindow : Window
         }
     }
 
-    // ─── UpdateUI ─────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Actualizeaza aspectul vizual al tablei (culori, simboluri) si textele de stare pe baza schimbarilor din GameState.
+    /// </summary>
     private void UpdateUI()
     {
         if (_engine == null) return;
@@ -180,7 +201,7 @@ public partial class MainWindow : Window
 
             var baseColor = _regionColors[cell.RegionId % _regionColors.Length];
 
-            // Fundal: mai închis când e Marked, ușor mai deschis Crown
+            // Feedback vizual: intunecam celulele marcate cu X si luminam cele cu coroana.
             btn.Background = cell.State switch
             {
                 CellState.Crown  => MakeBrush(Lighten(baseColor, 0.25), 1.0),
@@ -220,8 +241,10 @@ public partial class MainWindow : Window
         }
     }
 
-    // ─── Butoane dificultate ──────────────────────────────────────────────────
-
+    /// <summary>
+    /// Schimba aspectul butoanelor de dificultate pentru a indica vizual setarea activa.
+    /// </summary>
+    /// <param name="strategy">Strategia curenta de joc.</param>
     private void HighlightActiveButton(IGameStrategy strategy)
     {
         var easy   = this.FindControl<Button>("BtnEasy")!;
@@ -251,14 +274,25 @@ public partial class MainWindow : Window
         target.Foreground = new SolidColorBrush(Color.FromRgb(30, 30, 50));
     }
 
+    /// <summary> Handler pentru setarea dificultatii Easy. </summary>
     private void OnEasyClick  (object? s, RoutedEventArgs e) => StartNewGame(new EasyStrategy());
+
+    /// <summary> Handler pentru setarea dificultatii Medium. </summary>
     private void OnMediumClick(object? s, RoutedEventArgs e) => StartNewGame(new MediumStrategy());
+
+    /// <summary> Handler pentru setarea dificultatii Hard. </summary>
     private void OnHardClick  (object? s, RoutedEventArgs e) => StartNewGame(new HardStrategy());
 
+
+    /// <summary> Solicita motorului de joc anularea ultimei mutari si actualizeaza UI-ul. </summary>
     private void OnUndoClick(object? s, RoutedEventArgs e) { _engine?.Undo(); UpdateUI(); }
 
+    /// <summary> Reporneste jocul curent mentinand aceeasi strategie. </summary>
     private void OnNewGameClick(object? s, RoutedEventArgs e) => StartNewGame(_currentStrategy);
 
+    /// <summary>
+    /// Deschide fisierul de ajutor (CHM) prin intermediul proceselor de sistem.
+    /// </summary>
     private void OnHelpClick(object? s, RoutedEventArgs e)
     {
         try
@@ -276,8 +310,10 @@ public partial class MainWindow : Window
             label.Foreground = new SolidColorBrush(Colors.OrangeRed);
         }
     }
-    // ─── AI ───────────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Solicita motorului de sugestii cea mai buna mutare si o aplica automat pe tabla.
+    /// </summary>
     private void OnHintClick(object? s, RoutedEventArgs e)
     {
         if (_engine == null || _hintEngine == null) return;
@@ -285,8 +321,8 @@ public partial class MainWindow : Window
         var hint = _hintEngine.GetBestHint(_engine.State.Board);
         if (!hint.HasValue) return;
 
-        // Ciclăm starea până ajungem la Crown
         var cell = _engine.State.Board.GetCell(hint.Value.Row, hint.Value.Col);
+        // Simulam click-uri pana cand starea celulei devine Crown.
         int safety = 0;
         while (cell.State != CellState.Crown && safety++ < 3)
         {
@@ -294,7 +330,7 @@ public partial class MainWindow : Window
             cell = _engine.State.Board.GetCell(hint.Value.Row, hint.Value.Col);
         }
 
-        // Highlight vizual pe celula hintată
+        // Highlight vizual pe celula hint
         var grid = this.FindControl<Grid>("GameGrid")!;
         int idx  = hint.Value.Row * _engine.State.Board.Size + hint.Value.Col;
         if (idx < grid.Children.Count && grid.Children[idx] is Button btn)
@@ -306,6 +342,9 @@ public partial class MainWindow : Window
         UpdateUI();
     }
 
+    /// <summary>
+    /// Verifica daca starea curenta a tablei mai poate conduce catre o solutie valida.
+    /// </summary>
     private void OnSolveCheckClick(object? s, RoutedEventArgs e)
     {
         if (_engine == null || _miniSolver == null) return;
@@ -314,21 +353,24 @@ public partial class MainWindow : Window
         bool solvable = _miniSolver.IsSolvable(_engine.State.Board);
 
         label.Text = solvable
-            ? "Configurația e validă — mergi înainte! ✅"
-            : "Imposibil! Ai o greșeală undeva. ❌";
+            ? "Configurația e validă — mergi înainte! "
+            : "Imposibil! Ai o greșeală undeva. ";
         label.Foreground = new SolidColorBrush(
             solvable ? Color.FromRgb(80, 200, 120) : Color.FromRgb(220, 80, 80));
     }
 
+    /// <summary>
+    /// Activeaza modul Daily Challenge, pornind cronometrul si gestionand evenimentele de timp.
+    /// </summary>
     private void OnDailyChallengeClick(object? s, RoutedEventArgs e)
     {
-        // Oprim orice sesiune anterioară
+        // Oprim orice sesiune anterioara
         _dailyManager?.Stop();
 
         _isDailyMode = true;
         _dailyManager = new DailyChallengeManager(60); // 1 minut
 
-        // OnTick vine de pe un thread de sistem (Varianta 2) -> folosim Post pentru UI
+        
         _dailyManager.OnTick += (secondsRemaining) =>
         {
             Avalonia.Threading.Dispatcher.UIThread.Post(() =>
@@ -360,18 +402,21 @@ public partial class MainWindow : Window
         _dailyManager.Start();
         StartNewGame(new DailyChallengeStrategy());
         
-        // Asigurăm că grid-ul este activ
+        // Asiguram că grid ul este activ
         this.FindControl<Grid>("GameGrid")!.IsEnabled = true;
     }
 
     // curatare resurse 
+    /// <summary>
+    /// Asigura oprirea cronometrelor active la inchiderea ferestrei pentru a preveni scurgerile de memorie.
+    /// </summary>
     protected override void OnClosing(WindowClosingEventArgs e)
     {
         _dailyManager?.Stop();
         base.OnClosing(e);
     }
 
-    // ─── Helpers culori ───────────────────────────────────────────────────────
+    // help culori 
 
     private static SolidColorBrush MakeBrush(Color c, double alpha) =>
         new(Color.FromArgb((byte)(alpha * 255), c.R, c.G, c.B));
