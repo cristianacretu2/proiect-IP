@@ -1,3 +1,8 @@
+/*
+ * Scopul fisierului: Implementeaza algoritmul complex de generare a tablei de joc, asigurand o configuratie valida, solvabila si estetica.
+ * Autor: Cretu Cristiana
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,257 +10,191 @@ using CrownsGame.Core;
 
 namespace CrownsGame.Logic
 {
+    /// <summary>
+    /// Clasa responsabila pentru generarea procedurala a tablei de joc.
+    /// Utilizeaza backtracking pentru plasarea coroanelor si un algoritm de expansiune (BFS) pentru definirea regiunilor.
+    /// </summary>
     public class BoardGenerator
     {
-        private readonly Random _random;
+        private Random _rng = new Random();
 
-        public BoardGenerator()
+        /// <summary>
+        /// Genereaza o tabla completa si valida conform parametrilor de dificultate furnizati.
+        /// </summary>
+        /// <param name="size">Dimensiunea laturii gridului patrat.</param>
+        /// <param name="crownsPerGroup">Numarul de coroane necesare per rand, coloana si regiune.</param>
+        /// <returns>O instanta de Board initializata cu regiuni si gata de joc.</returns>
+        public Board Generate(int size, int crownsPerGroup)
         {
-            _random = new Random();
-        }
+            Board board = new Board(size, crownsPerGroup);
+            
+            // Pas 1: Plasam coroanele intr-o configuratie valida folosind backtracking
+            List<Position> crownPositions = PlaceCrowns(size, crownsPerGroup);
+            
+            if (crownPositions == null) 
+                return Generate(size, crownsPerGroup); // Reincercare in caz de esec (probabilitate scazuta)
 
-        public Board Generate(IGameStrategy strategy)
-        {
-            int size = strategy.GetBoardSize();
-            int k    = strategy.GetRequiredCrowns();
+            // Pas 2: Generam regiunile geografice in jurul coroanelor plasate
+            int[,] regionMap = GenerateRegions(size, crownsPerGroup, crownPositions);
 
-            for (int attempt = 0; attempt < 10_000; attempt++)
-            {
-                // Pas 1: plasează coroanele rând cu rând
-                var crowns = TryPlaceOnce(size, k, maxCalls: 50_000);
-                if (crowns == null) continue;
-
-                // Pas 2: expandează regiunile prin BFS
-                int[,] grid = ExpandRegions(size, crowns, k);
-
-                // Pas 3: verifică că fiecare regiune poate primi k coroane
-                if (!AllRegionsValid(grid, size, k, crowns)) continue;
-
-                // Pas 4: construiește Board-ul
-                return BuildBoard(size, k, grid, crowns);
-            }
-
-            throw new InvalidOperationException(
-                $"Nu s-a putut genera un board valid (size={size}, k={k})");
-        }
-
-        // ─── Pas 1: backtracking rând cu rând ────────────────────────────────
-
-        private List<(int r, int c)>? TryPlaceOnce(int size, int k, int maxCalls)
-        {
-            var colCount = new int[size];
-            var adj      = new int[size, size];
-            var result   = new List<(int r, int c)>(size * k);
-            int calls    = 0;
-
-            var colOrders = new int[size][];
+            // Pas 3: Transferam datele despre regiuni in obiectul Board
             for (int r = 0; r < size; r++)
             {
-                colOrders[r] = Enumerable.Range(0, size).ToArray();
-                Shuffle(colOrders[r]);
-            }
-
-            bool? Bt(int row, int colIdx, int chosen)
-            {
-                if (++calls > maxCalls) return null;
-
-                if (chosen == k)
-                {
-                    if (row + 1 == size)
-                        return colCount.All(x => x == k);
-
-                    int rowsLeft = size - row - 1;
-                    for (int c = 0; c < size; c++)
-                        if (colCount[c] + rowsLeft < k) return false;
-
-                    return Bt(row + 1, 0, 0);
-                }
-
-                if (size - colIdx < k - chosen) return false;
-
-                var order = colOrders[row];
-                for (int i = colIdx; i < size; i++)
-                {
-                    int c = order[i];
-                    if (colCount[c] >= k) continue;
-                    if (adj[row, c] > 0)  continue;
-
-                    result.Add((row, c));
-                    colCount[c]++;
-                    AddAdj(adj, row, c, size, +1);
-
-                    var res = Bt(row, i + 1, chosen + 1);
-                    if (res == true)  return true;
-                    if (res == null)  return null;
-
-                    result.RemoveAt(result.Count - 1);
-                    colCount[c]--;
-                    AddAdj(adj, row, c, size, -1);
-                }
-
-                return false;
-            }
-
-            return Bt(0, 0, 0) == true ? result : null;
-        }
-
-        // ─── Pas 2: BFS expansion ─────────────────────────────────────────────
-
-        private int[,] ExpandRegions(int size, List<(int r, int c)> crowns, int k)
-        {
-            var grid  = new int[size, size];
-            for (int r = 0; r < size; r++)
                 for (int c = 0; c < size; c++)
-                    grid[r, c] = -1;
-
-            var queue = new Queue<(int r, int c)>();
-            for (int i = 0; i < crowns.Count; i++)
-            {
-                var (r, c) = crowns[i];
-                grid[r, c] = i / k; // regionId
-                queue.Enqueue((r, c));
-            }
-
-            int[] dr = { -1, 1,  0, 0 };
-            int[] dc = {  0, 0, -1, 1 };
-
-            while (queue.Count > 0)
-            {
-                var (cr, cc) = queue.Dequeue();
-                int region   = grid[cr, cc];
-
-                var dirs = Enumerable.Range(0, 4).OrderBy(_ => _random.Next()).ToArray();
-                foreach (int i in dirs)
                 {
-                    int nr = cr + dr[i], nc = cc + dc[i];
-                    if (nr < 0 || nr >= size || nc < 0 || nc >= size) continue;
-                    if (grid[nr, nc] != -1) continue;
-
-                    grid[nr, nc] = region;
-                    queue.Enqueue((nr, nc));
+                    board.InitializeCell(r, c, regionMap[r, c]);
+                    // Celulele sunt initializate ca Empty; generatorul doar defineste harta regiunilor.
                 }
             }
-
-            return grid;
-        }
-
-        // ─── Pas 3: validare regiuni ──────────────────────────────────────────
-
-        private bool AllRegionsValid(int[,] grid, int size, int k,
-                                     List<(int r, int c)> crowns)
-        {
-            for (int regionId = 0; regionId < size; regionId++)
-                if (!RegionCanFitKCrowns(grid, size, regionId, k, crowns))
-                    return false;
-            return true;
-        }
-
-        private bool RegionCanFitKCrowns(int[,] grid, int size, int regionId, int k,
-                                          List<(int r, int c)> crowns)
-        {
-            // Celulele care aparțin regiunii
-            var cells = new List<(int r, int c)>();
-            for (int r = 0; r < size; r++)
-                for (int c = 0; c < size; c++)
-                    if (grid[r, c] == regionId)
-                        cells.Add((r, c));
-
-            // Blocaj inițial din coroanele altor regiuni
-            var initAdj = new int[size, size];
-            for (int i = 0; i < crowns.Count; i++)
-            {
-                if (i / k == regionId) continue;
-                var (cr, cc) = crowns[i];
-                for (int dr = -1; dr <= 1; dr++)
-                for (int dc = -1; dc <= 1; dc++)
-                {
-                    if (dr == 0 && dc == 0) continue;
-                    int nr = cr + dr, nc = cc + dc;
-                    if (nr >= 0 && nr < size && nc >= 0 && nc < size)
-                        initAdj[nr, nc]++;
-                }
-            }
-
-            // Copiem pentru backtracking
-            var adj = (int[,])initAdj.Clone();
-
-            bool Bt(int idx, int remaining)
-            {
-                if (remaining == 0) return true;
-                if (cells.Count - idx < remaining) return false;
-
-                var (r, c) = cells[idx];
-
-                // Cu coroană în (r,c)
-                if (adj[r, c] == 0)
-                {
-                    for (int dr = -1; dr <= 1; dr++)
-                    for (int dc = -1; dc <= 1; dc++)
-                    {
-                        if (dr == 0 && dc == 0) continue;
-                        int nr = r + dr, nc = c + dc;
-                        if (nr >= 0 && nr < size && nc >= 0 && nc < size)
-                            adj[nr, nc]++;
-                    }
-
-                    if (Bt(idx + 1, remaining - 1)) return true;
-
-                    for (int dr = -1; dr <= 1; dr++)
-                    for (int dc = -1; dc <= 1; dc++)
-                    {
-                        if (dr == 0 && dc == 0) continue;
-                        int nr = r + dr, nc = c + dc;
-                        if (nr >= 0 && nr < size && nc >= 0 && nc < size)
-                            adj[nr, nc]--;
-                    }
-                }
-
-                // Fără coroană în (r,c)
-                return Bt(idx + 1, remaining);
-            }
-
-            return Bt(0, k);
-        }
-
-        // ─── Pas 4: construiește Board ─────────────────────────────────────────
-
-        private Board BuildBoard(int size, int k, int[,] grid,
-                                  List<(int r, int c)> crowns)
-        {
-            var board = new Board(size, k);
-
-            for (int r = 0; r < size; r++)
-                for (int c = 0; c < size; c++)
-                    board.InitializeCell(r, c, grid[r, c]);
-
-            // Marcăm celulele cu coroane
-            foreach (var (r, c) in crowns)
-                board.GetCell(r, c).InitializeRegion(grid[r, c]);
 
             return board;
         }
 
-        // ─── Helpers ──────────────────────────────────────────────────────────
-
-        private void AddAdj(int[,] adj, int r, int c, int size, int delta)
+        /// <summary>
+        /// Coordoneaza procesul de plasare a coroanelor pe tabla respectand regulile de baza (rand, coloana, proximitate).
+        /// </summary>
+        /// <param name="size">Dimensiunea tablei.</param>
+        /// <param name="k">Numarul de coroane per grup.</param>
+        /// <returns>O lista de pozitii pentru coroane sau null daca nu s-a gasit o solutie.</returns>
+        private List<Position> PlaceCrowns(int size, int k)
         {
-            for (int dr = -1; dr <= 1; dr++)
-            for (int dc = -1; dc <= 1; dc++)
-            {
-                if (dr == 0 && dc == 0) continue;
-                int nr = r + dr, nc = c + dc;
-                if (nr >= 0 && nr < size && nc >= 0 && nc < size)
-                    adj[nr, nc] += delta;
-            }
+            int[,] grid = new int[size, size];
+            int[] rowCounts = new int[size];
+            int[] colCounts = new int[size];
+            List<Position> positions = new List<Position>();
+
+            if (Backtrack(0, 0, 0, size, k, grid, rowCounts, colCounts, positions))
+                return positions;
+
+            return null;
         }
 
-        private void Shuffle(int[] arr)
+        /// <summary>
+        /// Algoritm recursiv de backtracking pentru gasirea unei configuratii valide de coroane.
+        /// </summary>
+        private bool Backtrack(int row, int col, int placed, int size, int k, int[,] grid, int[] rowCounts, int[] colCounts, List<Position> posList)
         {
-            for (int i = arr.Length - 1; i > 0; i--)
+            if (placed == size * k) return true;
+            if (row == size) return false;
+
+            int nextCol = (col + 1 == size) ? 0 : col + 1;
+            int nextRow = (col + 1 == size) ? row + 1 : row;
+
+            // Incercam sa plasam o coroana in celula curenta
+            if (CanPlace(row, col, size, k, grid, rowCounts, colCounts))
             {
-                int j = _random.Next(i + 1);
-                (arr[i], arr[j]) = (arr[j], arr[i]);
+                grid[row, col] = 1;
+                rowCounts[row]++;
+                colCounts[col]++;
+                posList.Add(new Position(row, col));
+
+                if (Backtrack(nextRow, nextCol, placed + 1, size, k, grid, rowCounts, colCounts, posList))
+                    return true;
+
+                // Revenire (Backtrack) daca mutarea nu a dus la o solutie
+                grid[row, col] = 0;
+                rowCounts[row]--;
+                colCounts[col]--;
+                posList.RemoveAt(posList.Count - 1);
             }
+
+            // Incercam sa saram peste celula curenta
+            if (Backtrack(nextRow, nextCol, placed, size, k, grid, rowCounts, colCounts, posList))
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Verifica daca o coroana poate fi plasata la coordonatele r, c fara a incalca regulile de rand, coloana sau adiacenta.
+        /// </summary>
+        private bool CanPlace(int r, int c, int size, int k, int[,] grid, int[] rowCounts, int[] colCounts)
+        {
+            if (rowCounts[r] >= k || colCounts[c] >= k) return false;
+
+            // Verificare proximitate in cele 8 directii din jur
+            for (int dr = -1; dr <= 1; dr++)
+            {
+                for (int dc = -1; dc <= 1; dc++)
+                {
+                    int nr = r + dr, nc = c + dc;
+                    if (nr >= 0 && nr < size && nc >= 0 && nc < size && grid[nr, nc] == 1)
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Genereaza regiuni contigue prin gruparea coroanelor si expansiunea acestora pana la umplerea tablei.
+        /// </summary>
+        /// <param name="size">Dimensiunea tablei.</param>
+        /// <param name="k">Coroane per regiune.</param>
+        /// <param name="crowns">Lista pozitiilor unde au fost plasate coroanele.</param>
+        /// <returns>O matrice reprezentand ID-ul regiunii pentru fiecare celula.</returns>
+        private int[,] GenerateRegions(int size, int k, List<Position> crowns)
+        {
+            int[,] regions = new int[size, size];
+            for (int r = 0; r < size; r++)
+                for (int c = 0; c < size; c++)
+                    regions[r, c] = -1;
+
+            List<Position> availableCrowns = new List<Position>(crowns);
+            Queue<Position> queue = new Queue<Position>();
+            int currentRegionId = 0;
+
+            // Pasul 1: Gruparea coroanelor pentru a forma nucleul fiecarei regiuni
+            while (availableCrowns.Count > 0)
+            {
+                Position startCrown = availableCrowns[_rng.Next(availableCrowns.Count)];
+                availableCrowns.Remove(startCrown);
+                
+                regions[startCrown.Row, startCrown.Col] = currentRegionId;
+                queue.Enqueue(startCrown);
+
+                // Gasim cele mai apropiate K-1 coroane de nucleul actual
+                for (int i = 1; i < k; i++)
+                {
+                    if (availableCrowns.Count == 0) break;
+
+                    Position closest = availableCrowns
+                        .OrderBy(p => Math.Abs(p.Row - startCrown.Row) + Math.Abs(p.Col - startCrown.Col))
+                        .First();
+
+                    regions[closest.Row, closest.Col] = currentRegionId;
+                    queue.Enqueue(closest);
+                    availableCrowns.Remove(closest);
+                }
+                currentRegionId++;
+            }
+
+            // Pasul 2: Expansiune prin algoritmul BFS pentru a ocupa celulele ramase (Empty)
+            List<Position> frontier = new List<Position>(queue);
+            int[] dr = { -1, 1, 0, 0 };
+            int[] dc = { 0, 0, -1, 1 };
+
+            while (frontier.Count > 0)
+            {
+                int index = _rng.Next(frontier.Count);
+                Position current = frontier[index];
+                frontier.RemoveAt(index);
+
+                int regionId = regions[current.Row, current.Col];
+
+                for (int i = 0; i < 4; i++)
+                {
+                    int nr = current.Row + dr[i];
+                    int nc = current.Col + dc[i];
+
+                    if (nr >= 0 && nr < size && nc >= 0 && nc < size && regions[nr, nc] == -1)
+                    {
+                        regions[nr, nc] = regionId;
+                        frontier.Add(new Position(nr, nc));
+                    }
+                }
+            }
+
+            return regions;
         }
     }
 }

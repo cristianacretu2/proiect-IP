@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Structura usoara pentru reprezentarea coordonatelor bidimensionale.
- * Autor: 
+ * Autor: Sebastian Mihai Lungu
  */
 namespace CrownsGame.Core
 {

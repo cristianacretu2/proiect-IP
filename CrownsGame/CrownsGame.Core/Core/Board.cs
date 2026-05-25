@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Defineste clasa Board care gestioneaza matricea de joc si starea globala a tablei.
- * Autor: 
+ * Autor: Sebastian Mihai Lungu
  */
 
 namespace CrownsGame.Core

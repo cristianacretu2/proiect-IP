@@ -1,7 +1,7 @@
 /*
  * Scopul fisierului: Implementeaza logica de interfata (Code-behind) pentru fereastra principala, 
  * gestionand interactiunea dintre utilizator si motorul de joc.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 using Avalonia;
@@ -14,6 +14,7 @@ using CrownsGame.Core;
 using CrownsGame.AI;
 using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace CrownsGame.UI.Views;
 
@@ -291,22 +292,32 @@ public partial class MainWindow : Window
     private void OnNewGameClick(object? s, RoutedEventArgs e) => StartNewGame(_currentStrategy);
 
     /// <summary>
-    /// Deschide fisierul de ajutor (CHM) prin intermediul proceselor de sistem.
+    /// Deschide fisierul de ajutor (HTML) prin intermediul proceselor de sistem.
     /// </summary>
     private void OnHelpClick(object? s, RoutedEventArgs e)
     {
         try
         {
-            Process.Start(new ProcessStartInfo
+            // Obtinem calea absoluta catre fisier
+            string filePath = "/Users/cristianacretu/Desktop/proiect-IP/CrownsGame/ReguliJoc.html";
+
+            if (File.Exists(filePath))
             {
-                FileName = "Manual de utilizare - CrownsGame.chm",
-                UseShellExecute = true
-            });
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = filePath,
+                    UseShellExecute = true // Pentru browser
+                });
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
         }
         catch (Exception)
         {
             var label = this.FindControl<TextBlock>("StatusLabel")!;
-            label.Text = "Eroare: Nu s-a putut deschide fișierul de ajutor.";
+            label.Text = "Eroare: Nu s-a putut găsi fișierul de ajutor.";
             label.Foreground = new SolidColorBrush(Colors.OrangeRed);
         }
     }

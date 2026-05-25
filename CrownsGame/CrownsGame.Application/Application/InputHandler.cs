@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Defineste logica de manipulare a inputului pentru a asigura rotirea starilor celulelor.
- * Autor: 
+ * Autor: Sebastian Mihai Lungu
  */
 
 using CrownsGame.Core;

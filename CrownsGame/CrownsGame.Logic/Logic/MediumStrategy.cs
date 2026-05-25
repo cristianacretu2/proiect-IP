@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza strategia de dificultate medie (Medium) pentru configurarea jocului.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 namespace CrownsGame.Logic

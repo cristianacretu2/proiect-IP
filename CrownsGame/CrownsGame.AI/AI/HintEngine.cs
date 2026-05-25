@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza motorul de sugestii care ajuta jucatorul sa gaseasca mutari valide pe termen lung.
- * Autor: 
+ * Autor: Radani Antonia
  */
 
 using CrownsGame.Core;

@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Inregistrarea unei schimbari de stare a unei celule pentru gestionarea istoricului.
- * Autor: [Numele Tau]
+ * Autor: Sebastian Mihai Lungu
  */
 
 namespace CrownsGame.Core

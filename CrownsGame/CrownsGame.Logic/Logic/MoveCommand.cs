@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza modelul Command pentru actiunea de mutare, permitand functionalitati de Undo si Redo.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 using CrownsGame.Core;
 

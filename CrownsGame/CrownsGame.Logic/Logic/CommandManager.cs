@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza managerul de comenzi responsabil pentru stocarea istoricului mutarilor si gestionarea operatiilor Undo/Redo.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 using System.Collections.Generic;

@@ -1,7 +1,7 @@
 /*
  * Scopul fisierului: Defineste interfata contractuala pentru implementarea sablonului Command, 
  * asigurand suportul pentru operatii reversibile (Undo/Redo).
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 namespace CrownsGame.Logic
