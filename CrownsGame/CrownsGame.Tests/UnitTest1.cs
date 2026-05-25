@@ -1,6 +1,6 @@
 ﻿/*
  * Scopul fisierului: Testarea unitara extinsa pentru componentele Core si Logic, verificand regulile de validare, clonarea tablei si generarea de board-uri.
- * Autor: Radani Antonia
+ * Autor: Radani Antonia, Cretu Cristiana, Sebastian Mihai Lungu
  */
 
 using Xunit;
