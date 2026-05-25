@@ -1,7 +1,7 @@
 /*
  * Scopul fisierului: Implementeaza strategia specifica pentru modul Daily Challenge, 
  * oferind o configuratie rapida si compacta pentru sesiuni de joc contra-cronometru.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 namespace CrownsGame.Logic

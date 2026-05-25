@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Defineste contractul pentru strategiile de dificultate, permitand algoritmilor de generare si validare sa fie independenti de nivelul ales.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 namespace CrownsGame.Logic

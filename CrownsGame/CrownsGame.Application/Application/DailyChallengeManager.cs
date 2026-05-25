@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Gestioneaza logica pentru modul de joc contra-cronometru (Daily Challenge).
- * Autor:
+ * Autor: Radani Antonia
  */
 
 using System;

@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza regulile de validare ale jocului pentru a asigura respectarea constrangerilor de plasare a coroanelor.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 using CrownsGame.Core;

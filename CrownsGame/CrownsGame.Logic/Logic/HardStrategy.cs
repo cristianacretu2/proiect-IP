@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza strategia de dificultate ridicata (Hard) pentru configurarea jocului.
- * Autor: 
+ * Autor: Cretu Cristiana
  */
 
 namespace CrownsGame.Logic

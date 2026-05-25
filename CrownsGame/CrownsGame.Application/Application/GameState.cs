@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Defineste clasa GameState care actioneaza ca un container pentru datele si statisticile unei partide in desfasurare.
- * Autor: 
+ * Autor: Sebastian Mihai Lungu
  */
 
 using CrownsGame.Core;

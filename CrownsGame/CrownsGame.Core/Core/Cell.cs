@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Defineste componentele elementare ale tablei (celulele) si starile acestora.
- * Autor: 
+ * Autor: Sebastian Mihai Lungu
  */
 
 namespace CrownsGame.Core

@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Nucleul aplicatiei care coordoneaza interactiunea dintre componentele logice si starea jocului.
- * Autor: 
+ * Autor: Radani Antonia
  */
 
 using CrownsGame.Core;
@@ -32,7 +32,7 @@ namespace CrownsGame.Application
         {
             _strategy = strategy;
             BoardGenerator generator = new BoardGenerator();
-            Board newBoard = generator.Generate(strategy);
+            Board newBoard = generator.Generate(_strategy.GetBoardSize(), _strategy.GetRequiredCrowns() );
 
             _state = new GameState(newBoard);
             _validator = new Validator(strategy);

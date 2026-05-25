@@ -1,6 +1,6 @@
 /*
  * Scopul fisierului: Implementeaza un algoritm de cautare pentru a determina daca o configuratie a tablei are solutie.
- * Autor: 
+ * Autor: Radani Antonia
  */
 
 using System.Collections.Generic;
