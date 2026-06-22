@@ -1,0 +1,61 @@
+\doxysection{Crowns\+Game.\+Logic.\+ICommand Interface Reference}
+\hypertarget{interface_crowns_game_1_1_logic_1_1_i_command}{}\label{interface_crowns_game_1_1_logic_1_1_i_command}\index{CrownsGame.Logic.ICommand@{CrownsGame.Logic.ICommand}}
+
+
+Interfata de baza pentru obiectele de tip comanda. Defineste metodele necesare pentru executie si anulare (Undo), facilitand gestionarea istoricului de mutari.  
+
+
+Inheritance diagram for Crowns\+Game.\+Logic.\+ICommand:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_crowns_game_1_1_logic_1_1_i_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command_a212c95d62f159665df7a40cbf1384b60}{Execute}} ()
+\begin{DoxyCompactList}\small\item\em Executa actiunea specifica comenzii pe starea curenta a jocului. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command_a2a40ea14f18cbd1d897c6b09f797edd9}{Undo}} ()
+\begin{DoxyCompactList}\small\item\em Inverseaza actiunea executata anterior, restabilind starea precedenta a obiectelor afectate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfata de baza pentru obiectele de tip comanda. Defineste metodele necesare pentru executie si anulare (Undo), facilitand gestionarea istoricului de mutari. 
+
+\label{interface_crowns_game_1_1_logic_1_1_i_command_doc-func-members}
+\Hypertarget{interface_crowns_game_1_1_logic_1_1_i_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_crowns_game_1_1_logic_1_1_i_command_a212c95d62f159665df7a40cbf1384b60}\index{CrownsGame.Logic.ICommand@{CrownsGame.Logic.ICommand}!Execute@{Execute}}
+\index{Execute@{Execute}!CrownsGame.Logic.ICommand@{CrownsGame.Logic.ICommand}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{interface_crowns_game_1_1_logic_1_1_i_command_a212c95d62f159665df7a40cbf1384b60} 
+void Crowns\+Game.\+Logic.\+ICommand.\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Executa actiunea specifica comenzii pe starea curenta a jocului. 
+
+
+
+Implemented in \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command_a766787d6fcc7fffb342a448c2a402849}{Crowns\+Game.\+Logic.\+Move\+Command}}.
+
+\Hypertarget{interface_crowns_game_1_1_logic_1_1_i_command_a2a40ea14f18cbd1d897c6b09f797edd9}\index{CrownsGame.Logic.ICommand@{CrownsGame.Logic.ICommand}!Undo@{Undo}}
+\index{Undo@{Undo}!CrownsGame.Logic.ICommand@{CrownsGame.Logic.ICommand}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily \label{interface_crowns_game_1_1_logic_1_1_i_command_a2a40ea14f18cbd1d897c6b09f797edd9} 
+void Crowns\+Game.\+Logic.\+ICommand.\+Undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Inverseaza actiunea executata anterior, restabilind starea precedenta a obiectelor afectate. 
+
+
+
+Implemented in \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command_a25a8610ddb6b3adb80f74fb1ba66b302}{Crowns\+Game.\+Logic.\+Move\+Command}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_i_command_8cs}{ICommand.\+cs}}\end{DoxyCompactItemize}

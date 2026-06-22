@@ -1,0 +1,67 @@
+\doxysection{Crowns\+Game.\+AI.\+Hint\+Engine Class Reference}
+\hypertarget{class_crowns_game_1_1_a_i_1_1_hint_engine}{}\label{class_crowns_game_1_1_a_i_1_1_hint_engine}\index{CrownsGame.AI.HintEngine@{CrownsGame.AI.HintEngine}}
+
+
+Clasa responsabila pentru analizarea tablei si furnizarea celei mai bune mutari catre utilizator.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_a_i_1_1_hint_engine_aa5b06da2548e692f8abfd59cd78bd5de}{Hint\+Engine}} (\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator}{Validator}} validator, \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Constructor care injecteaza dependintele necesare pentru validare si rezolvare. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{struct_crowns_game_1_1_core_1_1_position}{Position}}? \doxymbox{\hyperlink{class_crowns_game_1_1_a_i_1_1_hint_engine_aa94ff8a0420b693bc2602d593ea37a03}{Get\+Best\+Hint}} (\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}} board)
+\begin{DoxyCompactList}\small\item\em Cauta in matricea de joc prima celula libera care, odata completata, pastreaza tabla intr-\/o stare rezolvabila. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa responsabila pentru analizarea tablei si furnizarea celei mai bune mutari catre utilizator. 
+
+\label{class_crowns_game_1_1_a_i_1_1_hint_engine_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_a_i_1_1_hint_engine_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_a_i_1_1_hint_engine_aa5b06da2548e692f8abfd59cd78bd5de}\index{CrownsGame.AI.HintEngine@{CrownsGame.AI.HintEngine}!HintEngine@{HintEngine}}
+\index{HintEngine@{HintEngine}!CrownsGame.AI.HintEngine@{CrownsGame.AI.HintEngine}}
+\doxysubsubsection{\texorpdfstring{HintEngine()}{HintEngine()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_a_i_1_1_hint_engine_aa5b06da2548e692f8abfd59cd78bd5de} 
+Crowns\+Game.\+AI.\+Hint\+Engine.\+Hint\+Engine (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator}{Validator}}}]{validator}{, }\item[{\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}}}]{strategy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor care injecteaza dependintele necesare pentru validare si rezolvare. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em validator} & Componenta care verifica regulile imediate ale jocului.\\
+\hline
+{\em strategy} & Strategia de joc curenta (ex:\+ numarul de coroane necesare).\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_a_i_1_1_hint_engine_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_a_i_1_1_hint_engine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_a_i_1_1_hint_engine_aa94ff8a0420b693bc2602d593ea37a03}\index{CrownsGame.AI.HintEngine@{CrownsGame.AI.HintEngine}!GetBestHint@{GetBestHint}}
+\index{GetBestHint@{GetBestHint}!CrownsGame.AI.HintEngine@{CrownsGame.AI.HintEngine}}
+\doxysubsubsection{\texorpdfstring{GetBestHint()}{GetBestHint()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_a_i_1_1_hint_engine_aa94ff8a0420b693bc2602d593ea37a03} 
+\doxymbox{\hyperlink{struct_crowns_game_1_1_core_1_1_position}{Position}}? Crowns\+Game.\+AI.\+Hint\+Engine.\+Get\+Best\+Hint (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cauta in matricea de joc prima celula libera care, odata completata, pastreaza tabla intr-\/o stare rezolvabila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Instanta curenta a tablei de joc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pozitia sugestiei gasite sau null daca nu exista o mutare sigura.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+AI/\+\+AI/\+\doxymbox{\hyperlink{_hint_engine_8cs}{Hint\+Engine.\+cs}}\end{DoxyCompactItemize}

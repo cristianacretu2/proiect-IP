@@ -1,0 +1,43 @@
+\doxysection{Crowns\+Game.\+Application.\+Input\+Handler Class Reference}
+\hypertarget{class_crowns_game_1_1_application_1_1_input_handler}{}\label{class_crowns_game_1_1_application_1_1_input_handler}\index{CrownsGame.Application.InputHandler@{CrownsGame.Application.InputHandler}}
+
+
+Clasa responsabila pentru gestionarea interactiunilor utilizatorului cu elementele de joc. Aceasta interpreteaza evenimentele de tip click si decide cum trebuie sa evolueze starea unei celule.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_input_handler_a87f031aa85238d528b723f22eaa3f92f}{Get\+Next\+State}} (\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} current\+State)
+\begin{DoxyCompactList}\small\item\em Determina starea urmatoare a unei celule intr-\/un mod ciclic, permitand utilizatorului sa exploreze solutii. Logica urmeaza fluxul:\+ Liber -\/\texorpdfstring{$>$}{>} Marcat (X) -\/\texorpdfstring{$>$}{>} Coroana -\/\texorpdfstring{$>$}{>} Liber. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa responsabila pentru gestionarea interactiunilor utilizatorului cu elementele de joc. Aceasta interpreteaza evenimentele de tip click si decide cum trebuie sa evolueze starea unei celule. 
+
+\label{class_crowns_game_1_1_application_1_1_input_handler_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_input_handler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_input_handler_a87f031aa85238d528b723f22eaa3f92f}\index{CrownsGame.Application.InputHandler@{CrownsGame.Application.InputHandler}!GetNextState@{GetNextState}}
+\index{GetNextState@{GetNextState}!CrownsGame.Application.InputHandler@{CrownsGame.Application.InputHandler}}
+\doxysubsubsection{\texorpdfstring{GetNextState()}{GetNextState()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_input_handler_a87f031aa85238d528b723f22eaa3f92f} 
+\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} Crowns\+Game.\+Application.\+Input\+Handler.\+Get\+Next\+State (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}}}]{current\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina starea urmatoare a unei celule intr-\/un mod ciclic, permitand utilizatorului sa exploreze solutii. Logica urmeaza fluxul:\+ Liber -\/\texorpdfstring{$>$}{>} Marcat (X) -\/\texorpdfstring{$>$}{>} Coroana -\/\texorpdfstring{$>$}{>} Liber. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+State} & Starea actuala a celulei inainte de a procesa noul input.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Noua stare (\doxylink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}) rezultata in urma interactiunii.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Application/\+\+Application/\+\doxymbox{\hyperlink{_input_handler_8cs}{Input\+Handler.\+cs}}\end{DoxyCompactItemize}

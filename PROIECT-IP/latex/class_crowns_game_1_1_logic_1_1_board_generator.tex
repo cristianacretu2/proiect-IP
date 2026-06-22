@@ -1,0 +1,45 @@
+\doxysection{Crowns\+Game.\+Logic.\+Board\+Generator Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_board_generator}{}\label{class_crowns_game_1_1_logic_1_1_board_generator}\index{CrownsGame.Logic.BoardGenerator@{CrownsGame.Logic.BoardGenerator}}
+
+
+Clasa responsabila pentru generarea procedurala a tablei de joc. Utilizeaza backtracking pentru plasarea coroanelor si un algoritm de expansiune (BFS) pentru definirea regiunilor.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}} \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_board_generator_aa6bd2f32b15754bb9f8ea59e0b163873}{Generate}} (int size, int crowns\+Per\+Group)
+\begin{DoxyCompactList}\small\item\em Genereaza o tabla completa si valida conform parametrilor de dificultate furnizati. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa responsabila pentru generarea procedurala a tablei de joc. Utilizeaza backtracking pentru plasarea coroanelor si un algoritm de expansiune (BFS) pentru definirea regiunilor. 
+
+\label{class_crowns_game_1_1_logic_1_1_board_generator_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_board_generator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_board_generator_aa6bd2f32b15754bb9f8ea59e0b163873}\index{CrownsGame.Logic.BoardGenerator@{CrownsGame.Logic.BoardGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!CrownsGame.Logic.BoardGenerator@{CrownsGame.Logic.BoardGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_board_generator_aa6bd2f32b15754bb9f8ea59e0b163873} 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}} Crowns\+Game.\+Logic.\+Board\+Generator.\+Generate (\begin{DoxyParamCaption}\item[{int}]{size}{, }\item[{int}]{crowns\+Per\+Group}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Genereaza o tabla completa si valida conform parametrilor de dificultate furnizati. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Dimensiunea laturii gridului patrat.\\
+\hline
+{\em crowns\+Per\+Group} & Numarul de coroane necesare per rand, coloana si regiune.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O instanta de \doxylink{class_crowns_game_1_1_core_1_1_board}{Board} initializata cu regiuni si gata de joc.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_board_generator_8cs}{Board\+Generator.\+cs}}\end{DoxyCompactItemize}

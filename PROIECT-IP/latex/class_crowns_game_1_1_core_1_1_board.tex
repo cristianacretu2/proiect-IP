@@ -1,0 +1,158 @@
+\doxysection{Crowns\+Game.\+Core.\+Board Class Reference}
+\hypertarget{class_crowns_game_1_1_core_1_1_board}{}\label{class_crowns_game_1_1_core_1_1_board}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+
+
+Reprezinta tabla de joc formata dintr-\/o matrice de celule, gestionand dimensiunea si regulile de plasare.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a0b82100a0b11e78015375642dce5e56c}{Board}} (int size, int crowns\+Per\+Group)
+\begin{DoxyCompactList}\small\item\em Initializeaza o noua instanta a tablei de joc cu dimensiunile specificate. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a3de5ecce4a416f80d6d09e2026f72a2f}{Initialize\+Cell}} (int row, int col, int region\+Id)
+\begin{DoxyCompactList}\small\item\em Aloca o celula noua la coordonatele specificate si ii atribuie o regiune colorata. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell}{Cell}} \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a1cf098ce1b3f8883778de44af5e24977}{Get\+Cell}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Returneaza obiectul \doxylink{class_crowns_game_1_1_core_1_1_cell}{Cell} de la coordonatele solicitate pentru inspectie sau modificare. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a13f6f8b634572b632adf210f85263518}{Set\+Cell\+State}} (int row, int col, \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Actualizeaza starea vizuala sau logica a unei celule specifice. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a0b82100a0b11e78015375642dce5e56c}{Board}} \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a04647d2d3bf34f0e19e9413f4517e710}{Clone}} ()
+\begin{DoxyCompactList}\small\item\em Creeaza o copie profunda a tablei actuale, utila pentru mecanisme de tip Undo sau simulari. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a8c5f384d739e74c2c629890463497b19}{Size}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Dimensiunea laturii tablei patratice. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a85f118e568810345b355851b8017e2fe}{Crowns\+Per\+Group}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Numarul de coroane necesar pentru fiecare rand, coloana sau regiune pentru a castiga. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezinta tabla de joc formata dintr-\/o matrice de celule, gestionand dimensiunea si regulile de plasare. 
+
+\label{class_crowns_game_1_1_core_1_1_board_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a0b82100a0b11e78015375642dce5e56c}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!Board@{Board}}
+\index{Board@{Board}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a0b82100a0b11e78015375642dce5e56c} 
+Crowns\+Game.\+Core.\+Board.\+Board (\begin{DoxyParamCaption}\item[{int}]{size}{, }\item[{int}]{crowns\+Per\+Group}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza o noua instanta a tablei de joc cu dimensiunile specificate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Numarul de randuri si coloane.\\
+\hline
+{\em crowns\+Per\+Group} & Tinta de coroane per grup logic.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_core_1_1_board_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a04647d2d3bf34f0e19e9413f4517e710}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!Clone@{Clone}}
+\index{Clone@{Clone}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a04647d2d3bf34f0e19e9413f4517e710} 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board_a0b82100a0b11e78015375642dce5e56c}{Board}} Crowns\+Game.\+Core.\+Board.\+Clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creeaza o copie profunda a tablei actuale, utila pentru mecanisme de tip Undo sau simulari. 
+
+\begin{DoxyReturn}{Returns}
+O noua instanta \doxylink{class_crowns_game_1_1_core_1_1_board}{Board} cu aceleasi date ca cea curenta.
+\end{DoxyReturn}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a1cf098ce1b3f8883778de44af5e24977}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!GetCell@{GetCell}}
+\index{GetCell@{GetCell}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{GetCell()}{GetCell()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a1cf098ce1b3f8883778de44af5e24977} 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell}{Cell}} Crowns\+Game.\+Core.\+Board.\+Get\+Cell (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returneaza obiectul \doxylink{class_crowns_game_1_1_core_1_1_cell}{Cell} de la coordonatele solicitate pentru inspectie sau modificare. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Randul celulei.\\
+\hline
+{\em col} & Coloana celulei.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiectul de tip \doxylink{class_crowns_game_1_1_core_1_1_cell}{Cell} aflat la pozitia respectiva.
+\end{DoxyReturn}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a3de5ecce4a416f80d6d09e2026f72a2f}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!InitializeCell@{InitializeCell}}
+\index{InitializeCell@{InitializeCell}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{InitializeCell()}{InitializeCell()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a3de5ecce4a416f80d6d09e2026f72a2f} 
+void Crowns\+Game.\+Core.\+Board.\+Initialize\+Cell (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{, }\item[{int}]{region\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aloca o celula noua la coordonatele specificate si ii atribuie o regiune colorata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Indexul randului.\\
+\hline
+{\em col} & Indexul coloanei.\\
+\hline
+{\em region\+Id} & ID-\/ul regiunii din care face parte celula.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a13f6f8b634572b632adf210f85263518}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!SetCellState@{SetCellState}}
+\index{SetCellState@{SetCellState}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{SetCellState()}{SetCellState()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a13f6f8b634572b632adf210f85263518} 
+void Crowns\+Game.\+Core.\+Board.\+Set\+Cell\+State (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{, }\item[{\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}}}]{new\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualizeaza starea vizuala sau logica a unei celule specifice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Randul vizat.\\
+\hline
+{\em col} & Coloana vizata.\\
+\hline
+{\em new\+State} & Noua stare (Empty, Marked sau Crown).\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_core_1_1_board_doc-property-members}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a85f118e568810345b355851b8017e2fe}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!CrownsPerGroup@{CrownsPerGroup}}
+\index{CrownsPerGroup@{CrownsPerGroup}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{CrownsPerGroup}{CrownsPerGroup}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a85f118e568810345b355851b8017e2fe} 
+int Crowns\+Game.\+Core.\+Board.\+Crowns\+Per\+Group\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Numarul de coroane necesar pentru fiecare rand, coloana sau regiune pentru a castiga. 
+
+\Hypertarget{class_crowns_game_1_1_core_1_1_board_a8c5f384d739e74c2c629890463497b19}\index{CrownsGame.Core.Board@{CrownsGame.Core.Board}!Size@{Size}}
+\index{Size@{Size}!CrownsGame.Core.Board@{CrownsGame.Core.Board}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_board_a8c5f384d739e74c2c629890463497b19} 
+int Crowns\+Game.\+Core.\+Board.\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Dimensiunea laturii tablei patratice. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Core/\+\+Core/\+\doxymbox{\hyperlink{_board_8cs}{Board.\+cs}}\end{DoxyCompactItemize}

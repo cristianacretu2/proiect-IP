@@ -1,0 +1,86 @@
+\doxysection{Crowns\+Game.\+Logic.\+Validator Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_validator}{}\label{class_crowns_game_1_1_logic_1_1_validator}\index{CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}}
+
+
+Clasa responsabila pentru verificarea legalitatii mutarilor conform regulilor jocului:\+ limite pe rand, coloana, regiune si restrictia de adiacenta.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator_a1d3513aae8ffd772e2ac935867df27f5}{Validator}} (int required\+Crowns)
+\begin{DoxyCompactList}\small\item\em Initializeaza validatorul folosind un numar fix de coroane permise per grup. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator_acd7b139709d9eddf545c21be51cb6b29}{Validator}} (\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Initializeaza validatorul extragand numarul de coroane necesare din strategia de joc curenta. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator_a893a96e1b634b55b1553722f0db07295}{Is\+Move\+Valid}} (\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}} board, int row, int col)
+\begin{DoxyCompactList}\small\item\em Verifica daca plasarea unei coroane la coordonatele specificate respecta toate regulile active pe tabla de joc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa responsabila pentru verificarea legalitatii mutarilor conform regulilor jocului:\+ limite pe rand, coloana, regiune si restrictia de adiacenta. 
+
+\label{class_crowns_game_1_1_logic_1_1_validator_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_validator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_validator_a1d3513aae8ffd772e2ac935867df27f5}\index{CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}!Validator@{Validator}}
+\index{Validator@{Validator}!CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}}
+\doxysubsubsection{\texorpdfstring{Validator()}{Validator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_validator_a1d3513aae8ffd772e2ac935867df27f5} 
+Crowns\+Game.\+Logic.\+Validator.\+Validator (\begin{DoxyParamCaption}\item[{int}]{required\+Crowns}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza validatorul folosind un numar fix de coroane permise per grup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em required\+Crowns} & Numarul maxim de coroane per rand/\+coloana/\+regiune.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_validator_acd7b139709d9eddf545c21be51cb6b29}\index{CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}!Validator@{Validator}}
+\index{Validator@{Validator}!CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}}
+\doxysubsubsection{\texorpdfstring{Validator()}{Validator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_validator_acd7b139709d9eddf545c21be51cb6b29} 
+Crowns\+Game.\+Logic.\+Validator.\+Validator (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}}}]{strategy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza validatorul extragand numarul de coroane necesare din strategia de joc curenta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & Instanta strategiei care defineste dificultatea jocului.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_logic_1_1_validator_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_validator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_validator_a893a96e1b634b55b1553722f0db07295}\index{CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}!IsMoveValid@{IsMoveValid}}
+\index{IsMoveValid@{IsMoveValid}!CrownsGame.Logic.Validator@{CrownsGame.Logic.Validator}}
+\doxysubsubsection{\texorpdfstring{IsMoveValid()}{IsMoveValid()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_validator_a893a96e1b634b55b1553722f0db07295} 
+bool Crowns\+Game.\+Logic.\+Validator.\+Is\+Move\+Valid (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}}}]{board}{, }\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca plasarea unei coroane la coordonatele specificate respecta toate regulile active pe tabla de joc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Instanta tablei de joc verificate.\\
+\hline
+{\em row} & Indexul randului unde se doreste mutarea.\\
+\hline
+{\em col} & Indexul coloanei unde se doreste mutarea.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True daca mutarea este valida, altfel False.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_validator_8cs}{Validator.\+cs}}\end{DoxyCompactItemize}

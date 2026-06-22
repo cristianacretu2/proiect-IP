@@ -1,0 +1,86 @@
+\doxysection{Crowns\+Game.\+Logic.\+Easy\+Strategy Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_easy_strategy}{}\label{class_crowns_game_1_1_logic_1_1_easy_strategy}\index{CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}}
+
+
+Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru a defini regulile specifice nivelului Easy. Acest nivel presupune o tabla de dimensiuni mici si un numar redus de coroane per grup.  
+
+
+Inheritance diagram for Crowns\+Game.\+Logic.\+Easy\+Strategy:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crowns_game_1_1_logic_1_1_easy_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_easy_strategy_a09dd227e3f12505eeddf397675887bcb}{Get\+Required\+Crowns}} ()
+\begin{DoxyCompactList}\small\item\em Determina numarul de coroane necesare per rand, coloana si regiune pentru nivelul Easy. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_easy_strategy_ad0b5351c68be134671288ba975d8b603}{Get\+Board\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Stabileste dimensiunea tablei de joc pentru dificultatea scazuta. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_easy_strategy_a2a0ef2138e20490b138f49e44015cbee}{Get\+Difficulty\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returneaza numele oficial al nivelului de dificultate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru a defini regulile specifice nivelului Easy. Acest nivel presupune o tabla de dimensiuni mici si un numar redus de coroane per grup. 
+
+\label{class_crowns_game_1_1_logic_1_1_easy_strategy_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_easy_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_easy_strategy_ad0b5351c68be134671288ba975d8b603}\index{CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}!GetBoardSize@{GetBoardSize}}
+\index{GetBoardSize@{GetBoardSize}!CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}}
+\doxysubsubsection{\texorpdfstring{GetBoardSize()}{GetBoardSize()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_easy_strategy_ad0b5351c68be134671288ba975d8b603} 
+int Crowns\+Game.\+Logic.\+Easy\+Strategy.\+Get\+Board\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stabileste dimensiunea tablei de joc pentru dificultatea scazuta. 
+
+\begin{DoxyReturn}{Returns}
+Valoarea 8, generand un grid de 8x8 celule.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_a77feab5d06b09c9b43215af99bb2b58c}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_easy_strategy_a2a0ef2138e20490b138f49e44015cbee}\index{CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}!GetDifficultyName@{GetDifficultyName}}
+\index{GetDifficultyName@{GetDifficultyName}!CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}}
+\doxysubsubsection{\texorpdfstring{GetDifficultyName()}{GetDifficultyName()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_easy_strategy_a2a0ef2138e20490b138f49e44015cbee} 
+string Crowns\+Game.\+Logic.\+Easy\+Strategy.\+Get\+Difficulty\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returneaza numele oficial al nivelului de dificultate. 
+
+\begin{DoxyReturn}{Returns}
+Sirul de caractere "{}\+Easy"{}.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_a3310e31bc0c904b710b44617ae08b4e9}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_easy_strategy_a09dd227e3f12505eeddf397675887bcb}\index{CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}!GetRequiredCrowns@{GetRequiredCrowns}}
+\index{GetRequiredCrowns@{GetRequiredCrowns}!CrownsGame.Logic.EasyStrategy@{CrownsGame.Logic.EasyStrategy}}
+\doxysubsubsection{\texorpdfstring{GetRequiredCrowns()}{GetRequiredCrowns()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_easy_strategy_a09dd227e3f12505eeddf397675887bcb} 
+int Crowns\+Game.\+Logic.\+Easy\+Strategy.\+Get\+Required\+Crowns (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina numarul de coroane necesare per rand, coloana si regiune pentru nivelul Easy. 
+
+\begin{DoxyReturn}{Returns}
+Valoarea 1, reprezentand o singura coroana obligatorie per grup.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_afcb01281ca74c098e3c1f27530e83b63}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_easy_strategy_8cs}{Easy\+Strategy.\+cs}}\end{DoxyCompactItemize}

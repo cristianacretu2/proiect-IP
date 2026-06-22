@@ -1,0 +1,108 @@
+\doxysection{Crowns\+Game.\+Application.\+Game\+Engine Class Reference}
+\hypertarget{class_crowns_game_1_1_application_1_1_game_engine}{}\label{class_crowns_game_1_1_application_1_1_game_engine}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+
+
+Motorul principal al jocului care proceseaza actiunile utilizatorului si valideaza conditiile de victorie globale.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_engine_a0c76dd0f14376db4447cc403d1febaa8}{Game\+Engine}} (\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Initializeaza motorul, genereaza o tabla noua si pregateste managerii de comenzi si validare. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_engine_a2c6f81ee9845040cb4a86974a1334bf2}{Handle\+Cell\+Click}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Gestioneaza logica de schimbare a starii unei celule la click, aplicand penalizari daca mutarea este gresita. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_engine_a98b2d7275a110b8a5a5ab6082751a6af}{Undo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita managerului de comenzi sa anuleze ultima actiune de mutare efectuata. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_engine_a7d65cd9ae336c08eec4b2235cef4f2dc}{Redo}} ()
+\begin{DoxyCompactList}\small\item\em Solicita managerului de comenzi sa re-\/execute o actiune care a fost anterior anulata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state}{Game\+State}} \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_engine_aa993973f88c3449a3417f60d7dc4b34f}{State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Acces catre datele de stare curente pentru a fi afisate in \doxylink{namespace_crowns_game_1_1_u_i}{UI}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Motorul principal al jocului care proceseaza actiunile utilizatorului si valideaza conditiile de victorie globale. 
+
+\label{class_crowns_game_1_1_application_1_1_game_engine_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_a0c76dd0f14376db4447cc403d1febaa8}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}!GameEngine@{GameEngine}}
+\index{GameEngine@{GameEngine}!CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+\doxysubsubsection{\texorpdfstring{GameEngine()}{GameEngine()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_engine_a0c76dd0f14376db4447cc403d1febaa8} 
+Crowns\+Game.\+Application.\+Game\+Engine.\+Game\+Engine (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}}}]{strategy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza motorul, genereaza o tabla noua si pregateste managerii de comenzi si validare. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy} & Strategia care defineste regulile specifice nivelului ales.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_application_1_1_game_engine_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_a2c6f81ee9845040cb4a86974a1334bf2}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}!HandleCellClick@{HandleCellClick}}
+\index{HandleCellClick@{HandleCellClick}!CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+\doxysubsubsection{\texorpdfstring{HandleCellClick()}{HandleCellClick()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_engine_a2c6f81ee9845040cb4a86974a1334bf2} 
+void Crowns\+Game.\+Application.\+Game\+Engine.\+Handle\+Cell\+Click (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gestioneaza logica de schimbare a starii unei celule la click, aplicand penalizari daca mutarea este gresita. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Randul celulei apasate.\\
+\hline
+{\em col} & Coloana celulei apasate.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_a7d65cd9ae336c08eec4b2235cef4f2dc}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}!Redo@{Redo}}
+\index{Redo@{Redo}!CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+\doxysubsubsection{\texorpdfstring{Redo()}{Redo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_engine_a7d65cd9ae336c08eec4b2235cef4f2dc} 
+void Crowns\+Game.\+Application.\+Game\+Engine.\+Redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Solicita managerului de comenzi sa re-\/execute o actiune care a fost anterior anulata. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_a98b2d7275a110b8a5a5ab6082751a6af}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}!Undo@{Undo}}
+\index{Undo@{Undo}!CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_engine_a98b2d7275a110b8a5a5ab6082751a6af} 
+void Crowns\+Game.\+Application.\+Game\+Engine.\+Undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Solicita managerului de comenzi sa anuleze ultima actiune de mutare efectuata. 
+
+
+
+\label{class_crowns_game_1_1_application_1_1_game_engine_doc-property-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_engine_aa993973f88c3449a3417f60d7dc4b34f}\index{CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}!State@{State}}
+\index{State@{State}!CrownsGame.Application.GameEngine@{CrownsGame.Application.GameEngine}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_engine_aa993973f88c3449a3417f60d7dc4b34f} 
+\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state}{Game\+State}} Crowns\+Game.\+Application.\+Game\+Engine.\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Acces catre datele de stare curente pentru a fi afisate in \doxylink{namespace_crowns_game_1_1_u_i}{UI}. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Application/\+\+Application/\+\doxymbox{\hyperlink{_game_engine_8cs}{Game\+Engine.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\doxysection{Crowns\+Game.\+Logic.\+Move\+Command Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_move_command}{}\label{class_crowns_game_1_1_logic_1_1_move_command}\index{CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}}
+
+
+Reprezinta comanda de schimbare a starii unei celule de pe tabla de joc. Aceasta clasa stocheaza informatiile necesare atat pentru aplicarea mutarii, cat si pentru revenirea la starea anterioara.  
+
+
+Inheritance diagram for Crowns\+Game.\+Logic.\+Move\+Command:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crowns_game_1_1_logic_1_1_move_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command_a6a4ff86de04e20afab7a2435fc4e938c}{Move\+Command}} (\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}} board, int row, int col, \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Initializeaza o noua instanta a comenzii de mutare, capturand starea actuala a celulei pentru a permite anularea ulterioara. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command_a766787d6fcc7fffb342a448c2a402849}{Execute}} ()
+\begin{DoxyCompactList}\small\item\em Aplica efectiv mutarea pe tabla de joc prin setarea noii stari in celula corespunzatoare. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command_a25a8610ddb6b3adb80f74fb1ba66b302}{Undo}} ()
+\begin{DoxyCompactList}\small\item\em Revine la starea anterioara a celulei folosind informatiile salvate in momentul instantiarii comenzii. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezinta comanda de schimbare a starii unei celule de pe tabla de joc. Aceasta clasa stocheaza informatiile necesare atat pentru aplicarea mutarii, cat si pentru revenirea la starea anterioara. 
+
+\label{class_crowns_game_1_1_logic_1_1_move_command_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_move_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_move_command_a6a4ff86de04e20afab7a2435fc4e938c}\index{CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}!MoveCommand@{MoveCommand}}
+\index{MoveCommand@{MoveCommand}!CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}}
+\doxysubsubsection{\texorpdfstring{MoveCommand()}{MoveCommand()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_move_command_a6a4ff86de04e20afab7a2435fc4e938c} 
+Crowns\+Game.\+Logic.\+Move\+Command.\+Move\+Command (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}}}]{board}{, }\item[{int}]{row}{, }\item[{int}]{col}{, }\item[{\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}}}]{new\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza o noua instanta a comenzii de mutare, capturand starea actuala a celulei pentru a permite anularea ulterioara. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Referinta catre tabla de joc pe care se aplica modificarea.\\
+\hline
+{\em row} & Randul celulei vizate.\\
+\hline
+{\em col} & Coloana celulei vizate.\\
+\hline
+{\em new\+State} & Noua stare (\doxylink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}) ce urmeaza a fi aplicata.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_logic_1_1_move_command_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_move_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_move_command_a766787d6fcc7fffb342a448c2a402849}\index{CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}!Execute@{Execute}}
+\index{Execute@{Execute}!CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_move_command_a766787d6fcc7fffb342a448c2a402849} 
+void Crowns\+Game.\+Logic.\+Move\+Command.\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aplica efectiv mutarea pe tabla de joc prin setarea noii stari in celula corespunzatoare. 
+
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command_a212c95d62f159665df7a40cbf1384b60}{Crowns\+Game.\+Logic.\+ICommand}}.
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_move_command_a25a8610ddb6b3adb80f74fb1ba66b302}\index{CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}!Undo@{Undo}}
+\index{Undo@{Undo}!CrownsGame.Logic.MoveCommand@{CrownsGame.Logic.MoveCommand}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_move_command_a25a8610ddb6b3adb80f74fb1ba66b302} 
+void Crowns\+Game.\+Logic.\+Move\+Command.\+Undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Revine la starea anterioara a celulei folosind informatiile salvate in momentul instantiarii comenzii. 
+
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command_a2a40ea14f18cbd1d897c6b09f797edd9}{Crowns\+Game.\+Logic.\+ICommand}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_move_command_8cs}{Move\+Command.\+cs}}\end{DoxyCompactItemize}

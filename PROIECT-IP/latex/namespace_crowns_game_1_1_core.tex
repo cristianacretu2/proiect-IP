@@ -1,0 +1,56 @@
+\doxysection{Crowns\+Game.\+Core Namespace Reference}
+\hypertarget{namespace_crowns_game_1_1_core}{}\label{namespace_crowns_game_1_1_core}\index{CrownsGame.Core@{CrownsGame.Core}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_board}{Board}}
+\begin{DoxyCompactList}\small\item\em Reprezinta tabla de joc formata dintr-\/o matrice de celule, gestionand dimensiunea si regulile de plasare. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell}{Cell}}
+\begin{DoxyCompactList}\small\item\em Reprezinta o unitate individuala pe tabla de joc, pastrand apartenenta la o regiune si starea curenta. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_move}{Move}}
+\begin{DoxyCompactList}\small\item\em Stocheaza datele despre o singura interactiune a utilizatorului cu tabla, permitand revenirea la starea anterioara. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_crowns_game_1_1_core_1_1_position}{Position}}
+\begin{DoxyCompactList}\small\item\em Structura imuabila pentru reprezentarea unei locatii (rand, coloana) pe grila de joc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} \{ \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ace2c8aed9c2fa0cfbed56cbda4d8bf07}{Empty}}
+, \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ab80c545ea15439f0b585c86a6aab3226}{Marked}}
+, \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ae95a34ce4e7feb3a2939c52ddac5d175}{Crown}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerare pentru starile posibile ale unei celule, reflectand progresul jucatorului. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{namespace_crowns_game_1_1_core_doc-enum-members}
+\Hypertarget{namespace_crowns_game_1_1_core_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}\index{CrownsGame.Core@{CrownsGame.Core}!CellState@{CellState}}
+\index{CellState@{CellState}!CrownsGame.Core@{CrownsGame.Core}}
+\doxysubsubsection{\texorpdfstring{CellState}{CellState}}
+{\footnotesize\ttfamily \label{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881} 
+enum \doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Crowns\+Game.\+Core.\+Cell\+State}}}
+
+
+
+Enumerare pentru starile posibile ale unei celule, reflectand progresul jucatorului. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Empty@{Empty}!CrownsGame.Core@{CrownsGame.Core}}
+\index{CrownsGame.Core@{CrownsGame.Core}!Empty@{Empty}}
+}\Hypertarget{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ace2c8aed9c2fa0cfbed56cbda4d8bf07}\label{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ace2c8aed9c2fa0cfbed56cbda4d8bf07} 
+Empty&Celula fara nicio marcare. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Marked@{Marked}!CrownsGame.Core@{CrownsGame.Core}}
+\index{CrownsGame.Core@{CrownsGame.Core}!Marked@{Marked}}
+}\Hypertarget{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ab80c545ea15439f0b585c86a6aab3226}\label{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ab80c545ea15439f0b585c86a6aab3226} 
+Marked&Celula eliminata vizual de catre jucator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Crown@{Crown}!CrownsGame.Core@{CrownsGame.Core}}
+\index{CrownsGame.Core@{CrownsGame.Core}!Crown@{Crown}}
+}\Hypertarget{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ae95a34ce4e7feb3a2939c52ddac5d175}\label{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881ae95a34ce4e7feb3a2939c52ddac5d175} 
+Crown&Celula care contine o coroana valida. \\
+\hline
+
+\end{DoxyEnumFields}

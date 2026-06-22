@@ -1,0 +1,81 @@
+\doxysection{Crowns\+Game.\+Logic.\+Command\+Manager Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_command_manager}{}\label{class_crowns_game_1_1_logic_1_1_command_manager}\index{CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}}
+
+
+Gestioneaza istoricul comenzilor pentru a permite operatii de Undo si Redo. Utilizeaza doua stive (LIFO) pentru a urmari mutarile efectuate si pe cele anulate.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_command_manager_a5721db25973ca45109cbe888cf12eb24}{Command\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructor care initializeaza stivele de istoric pentru mutari. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_command_manager_a64666c185ce2c0f502e2dac4d6f3732b}{Execute\+Command}} (\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command}{ICommand}} command)
+\begin{DoxyCompactList}\small\item\em Executa o comanda noua, o adauga in stiva de Undo si curata istoricul de Redo. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_command_manager_add48fc6dde16da266327e157b218d6b0}{Undo}} ()
+\begin{DoxyCompactList}\small\item\em Anuleaza ultima comanda executata, mutand-\/o in stiva de Redo pentru o eventuala refacere. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_command_manager_a785367cd2a58173ea4866ab8cb65fb6b}{Redo}} ()
+\begin{DoxyCompactList}\small\item\em Reface ultima comanda anulata prin metoda Undo, executand-\/o din nou si mutand-\/o inapoi in stiva de Undo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestioneaza istoricul comenzilor pentru a permite operatii de Undo si Redo. Utilizeaza doua stive (LIFO) pentru a urmari mutarile efectuate si pe cele anulate. 
+
+\label{class_crowns_game_1_1_logic_1_1_command_manager_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_a5721db25973ca45109cbe888cf12eb24}\index{CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}!CommandManager@{CommandManager}}
+\index{CommandManager@{CommandManager}!CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}}
+\doxysubsubsection{\texorpdfstring{CommandManager()}{CommandManager()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_command_manager_a5721db25973ca45109cbe888cf12eb24} 
+Crowns\+Game.\+Logic.\+Command\+Manager.\+Command\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor care initializeaza stivele de istoric pentru mutari. 
+
+
+
+\label{class_crowns_game_1_1_logic_1_1_command_manager_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_a64666c185ce2c0f502e2dac4d6f3732b}\index{CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}!ExecuteCommand@{ExecuteCommand}}
+\index{ExecuteCommand@{ExecuteCommand}!CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}}
+\doxysubsubsection{\texorpdfstring{ExecuteCommand()}{ExecuteCommand()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_command_manager_a64666c185ce2c0f502e2dac4d6f3732b} 
+void Crowns\+Game.\+Logic.\+Command\+Manager.\+Execute\+Command (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command}{ICommand}}}]{command}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executa o comanda noua, o adauga in stiva de Undo si curata istoricul de Redo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Comanda ce urmeaza a fi executata si salvata in istoric.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_a785367cd2a58173ea4866ab8cb65fb6b}\index{CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}!Redo@{Redo}}
+\index{Redo@{Redo}!CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}}
+\doxysubsubsection{\texorpdfstring{Redo()}{Redo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_command_manager_a785367cd2a58173ea4866ab8cb65fb6b} 
+void Crowns\+Game.\+Logic.\+Command\+Manager.\+Redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reface ultima comanda anulata prin metoda Undo, executand-\/o din nou si mutand-\/o inapoi in stiva de Undo. 
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_command_manager_add48fc6dde16da266327e157b218d6b0}\index{CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}!Undo@{Undo}}
+\index{Undo@{Undo}!CrownsGame.Logic.CommandManager@{CrownsGame.Logic.CommandManager}}
+\doxysubsubsection{\texorpdfstring{Undo()}{Undo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_command_manager_add48fc6dde16da266327e157b218d6b0} 
+void Crowns\+Game.\+Logic.\+Command\+Manager.\+Undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Anuleaza ultima comanda executata, mutand-\/o in stiva de Redo pentru o eventuala refacere. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_command_manager_8cs}{Command\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+\doxysection{Crowns\+Game.\+Logic Namespace Reference}
+\hypertarget{namespace_crowns_game_1_1_logic}{}\label{namespace_crowns_game_1_1_logic}\index{CrownsGame.Logic@{CrownsGame.Logic}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_board_generator}{Board\+Generator}}
+\begin{DoxyCompactList}\small\item\em Clasa responsabila pentru generarea procedurala a tablei de joc. Utilizeaza backtracking pentru plasarea coroanelor si un algoritm de expansiune (BFS) pentru definirea regiunilor. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_command_manager}{Command\+Manager}}
+\begin{DoxyCompactList}\small\item\em Gestioneaza istoricul comenzilor pentru a permite operatii de Undo si Redo. Utilizeaza doua stive (LIFO) pentru a urmari mutarile efectuate si pe cele anulate. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy}{Daily\+Challenge\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru modul de joc Daily Challenge. Aceasta strategie utilizeaza o tabla redusa (5x5) pentru a permite rezolvarea rapida a mai multor puzzle-\/uri intr-\/un timp limitat. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_easy_strategy}{Easy\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru a defini regulile specifice nivelului Easy. Acest nivel presupune o tabla de dimensiuni mici si un numar redus de coroane per grup. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_hard_strategy}{Hard\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru a defini regulile specifice nivelului Hard. Acest nivel reprezinta provocarea maxima, utilizand un grid extins si un numar mare de coroane. \end{DoxyCompactList}\item 
+interface \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_command}{ICommand}}
+\begin{DoxyCompactList}\small\item\em Interfata de baza pentru obiectele de tip comanda. Defineste metodele necesare pentru executie si anulare (Undo), facilitand gestionarea istoricului de mutari. \end{DoxyCompactList}\item 
+interface \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Interfata pentru nivelurile de dificultate ale jocului:\+ Easy, Medium, Hard. Design pattern folosit:\+ Strategy -\/ permite schimbarea regulilor de configurare a tablei la runtime. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_medium_strategy}{Medium\+Strategy}}
+\begin{DoxyCompactList}\small\item\em Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru a defini regulile specifice nivelului Medium. Acest nivel creste complexitatea prin marirea dimensiunii tablei si a numarului de coroane necesare. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_move_command}{Move\+Command}}
+\begin{DoxyCompactList}\small\item\em Reprezinta comanda de schimbare a starii unei celule de pe tabla de joc. Aceasta clasa stocheaza informatiile necesare atat pentru aplicarea mutarii, cat si pentru revenirea la starea anterioara. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_validator}{Validator}}
+\begin{DoxyCompactList}\small\item\em Clasa responsabila pentru verificarea legalitatii mutarilor conform regulilor jocului:\+ limite pe rand, coloana, regiune si restrictia de adiacenta. \end{DoxyCompactList}\end{DoxyCompactItemize}
