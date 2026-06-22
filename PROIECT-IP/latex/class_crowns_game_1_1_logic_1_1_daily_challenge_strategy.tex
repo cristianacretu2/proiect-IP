@@ -1,0 +1,86 @@
+\doxysection{Crowns\+Game.\+Logic.\+Daily\+Challenge\+Strategy Class Reference}
+\hypertarget{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy}{}\label{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy}\index{CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}}
+
+
+Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru modul de joc Daily Challenge. Aceasta strategie utilizeaza o tabla redusa (5x5) pentru a permite rezolvarea rapida a mai multor puzzle-\/uri intr-\/un timp limitat.  
+
+
+Inheritance diagram for Crowns\+Game.\+Logic.\+Daily\+Challenge\+Strategy:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a424bb54500286848285d48400fb63fe1}{Get\+Board\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Stabileste dimensiunea tablei de joc pentru modul Daily Challenge. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a56f2af3f40d45aff35c33190d961f3f6}{Get\+Required\+Crowns}} ()
+\begin{DoxyCompactList}\small\item\em Determina numarul de coroane necesare per grup pentru acest mod de joc. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a341fc5d38edbb8198fd3ebcd62bb3f54}{Get\+Difficulty\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returneaza numele oficial al modului de dificultate pentru afisarea in \doxylink{namespace_crowns_game_1_1_u_i}{UI}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementeaza interfata \doxylink{interface_crowns_game_1_1_logic_1_1_i_game_strategy}{IGame\+Strategy} pentru modul de joc Daily Challenge. Aceasta strategie utilizeaza o tabla redusa (5x5) pentru a permite rezolvarea rapida a mai multor puzzle-\/uri intr-\/un timp limitat. 
+
+\label{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a424bb54500286848285d48400fb63fe1}\index{CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}!GetBoardSize@{GetBoardSize}}
+\index{GetBoardSize@{GetBoardSize}!CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetBoardSize()}{GetBoardSize()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a424bb54500286848285d48400fb63fe1} 
+int Crowns\+Game.\+Logic.\+Daily\+Challenge\+Strategy.\+Get\+Board\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stabileste dimensiunea tablei de joc pentru modul Daily Challenge. 
+
+\begin{DoxyReturn}{Returns}
+Valoarea 5, generand un grid compact de 5x5 celule.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_a77feab5d06b09c9b43215af99bb2b58c}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a341fc5d38edbb8198fd3ebcd62bb3f54}\index{CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}!GetDifficultyName@{GetDifficultyName}}
+\index{GetDifficultyName@{GetDifficultyName}!CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetDifficultyName()}{GetDifficultyName()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a341fc5d38edbb8198fd3ebcd62bb3f54} 
+string Crowns\+Game.\+Logic.\+Daily\+Challenge\+Strategy.\+Get\+Difficulty\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returneaza numele oficial al modului de dificultate pentru afisarea in \doxylink{namespace_crowns_game_1_1_u_i}{UI}. 
+
+\begin{DoxyReturn}{Returns}
+Sirul de caractere "{}\+Daily Challenge"{}.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_a3310e31bc0c904b710b44617ae08b4e9}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+\Hypertarget{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a56f2af3f40d45aff35c33190d961f3f6}\index{CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}!GetRequiredCrowns@{GetRequiredCrowns}}
+\index{GetRequiredCrowns@{GetRequiredCrowns}!CrownsGame.Logic.DailyChallengeStrategy@{CrownsGame.Logic.DailyChallengeStrategy}}
+\doxysubsubsection{\texorpdfstring{GetRequiredCrowns()}{GetRequiredCrowns()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_logic_1_1_daily_challenge_strategy_a56f2af3f40d45aff35c33190d961f3f6} 
+int Crowns\+Game.\+Logic.\+Daily\+Challenge\+Strategy.\+Get\+Required\+Crowns (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina numarul de coroane necesare per grup pentru acest mod de joc. 
+
+\begin{DoxyReturn}{Returns}
+Valoarea 1, facilitand o rezolvare dinamica.
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{interface_crowns_game_1_1_logic_1_1_i_game_strategy_afcb01281ca74c098e3c1f27530e83b63}{Crowns\+Game.\+Logic.\+IGame\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Logic/\+\+Logic/\+\doxymbox{\hyperlink{_daily_challenge_strategy_8cs}{Daily\+Challenge\+Strategy.\+cs}}\end{DoxyCompactItemize}

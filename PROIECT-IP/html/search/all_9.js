@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['main_0',['Main',['../class_crowns_game_1_1_u_i_1_1_program.html#a9976d9ad2cd15fb7c38e7ca676f6124e',1,'CrownsGame::UI::Program']]],
+  ['mainwindow_1',['MainWindow',['../class_crowns_game_1_1_u_i_1_1_views_1_1_main_window.html',1,'CrownsGame.UI.Views.MainWindow'],['../class_crowns_game_1_1_u_i_1_1_views_1_1_main_window.html#aafe1dda0f0de2cdfdd7543c49aa24ccb',1,'CrownsGame.UI.Views.MainWindow.MainWindow()']]],
+  ['mainwindow_2eaxaml_2ecs_2',['MainWindow.axaml.cs',['../_main_window_8axaml_8cs.html',1,'']]],
+  ['mainwindowviewmodel_3',['MainWindowViewModel',['../class_crowns_game_1_1_u_i_1_1_view_models_1_1_main_window_view_model.html',1,'CrownsGame::UI::ViewModels']]],
+  ['mainwindowviewmodel_2ecs_4',['MainWindowViewModel.cs',['../_main_window_view_model_8cs.html',1,'']]],
+  ['marked_5',['Marked',['../namespace_crowns_game_1_1_core.html#afa4bcbb7ed026fd9bd971b324e61e881ab80c545ea15439f0b585c86a6aab3226',1,'CrownsGame::Core']]],
+  ['match_6',['Match',['../class_crowns_game_1_1_u_i_1_1_view_locator.html#acbbdb82711f3b2ad528413b55f8ad1b8',1,'CrownsGame::UI::ViewLocator']]],
+  ['mediumstrategy_7',['MediumStrategy',['../class_crowns_game_1_1_logic_1_1_medium_strategy.html',1,'CrownsGame::Logic']]],
+  ['mediumstrategy_2ecs_8',['MediumStrategy.cs',['../_medium_strategy_8cs.html',1,'']]],
+  ['minisolver_9',['MiniSolver',['../class_crowns_game_1_1_a_i_1_1_mini_solver.html',1,'CrownsGame.AI.MiniSolver'],['../class_crowns_game_1_1_a_i_1_1_mini_solver.html#a56137708995bbbb32a71271ab3756d4e',1,'CrownsGame.AI.MiniSolver.MiniSolver()']]],
+  ['minisolver_2ecs_10',['MiniSolver.cs',['../_mini_solver_8cs.html',1,'']]],
+  ['mistakes_11',['Mistakes',['../class_crowns_game_1_1_application_1_1_game_state.html#a2d0888413ad3baa481c35098e966c6b3',1,'CrownsGame::Application::GameState']]],
+  ['move_12',['Move',['../class_crowns_game_1_1_core_1_1_move.html',1,'CrownsGame.Core.Move'],['../class_crowns_game_1_1_core_1_1_move.html#a8c5ae820cc3515b332e55c75bfe16808',1,'CrownsGame.Core.Move.Move()']]],
+  ['move_2ecs_13',['Move.cs',['../_move_8cs.html',1,'']]],
+  ['movecommand_14',['MoveCommand',['../class_crowns_game_1_1_logic_1_1_move_command.html',1,'CrownsGame.Logic.MoveCommand'],['../class_crowns_game_1_1_logic_1_1_move_command.html#a6a4ff86de04e20afab7a2435fc4e938c',1,'CrownsGame.Logic.MoveCommand.MoveCommand()']]],
+  ['movecommand_2ecs_15',['MoveCommand.cs',['../_move_command_8cs.html',1,'']]]
+];

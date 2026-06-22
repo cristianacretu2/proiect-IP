@@ -1,0 +1,4 @@
+var _mini_solver_8cs =
+[
+    [ "CrownsGame.AI.MiniSolver", "class_crowns_game_1_1_a_i_1_1_mini_solver.html", "class_crowns_game_1_1_a_i_1_1_mini_solver" ]
+];

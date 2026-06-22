@@ -1,0 +1,96 @@
+\doxysection{Crowns\+Game.\+Application.\+Game\+State Class Reference}
+\hypertarget{class_crowns_game_1_1_application_1_1_game_state}{}\label{class_crowns_game_1_1_application_1_1_game_state}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+
+
+Gestioneaza starea logica si statistica a unui joc, centralizand informatiile despre tabla, scor si erori. Aceasta clasa este utilizata de motorul de joc pentru a urmari progresul utilizatorului.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_aea2148db98d050903586eba7a70666ff}{Game\+State}} (\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_ab171e1dcbaa7105f46d2cfe34a22b66b}{Board}} board)
+\begin{DoxyCompactList}\small\item\em Initializeaza o noua stare de joc, setand scorul si greselile la valorile de baza si legand tabla de joc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Board \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_ab171e1dcbaa7105f46d2cfe34a22b66b}{Board}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Referinta catre instanta tablei de joc pe care se efectueaza mutarile in sesiunea curenta. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_a1b38c9ea5a8f79fa7691545dd8351264}{Score}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Valoarea numerica a punctajului acumulat, influentata de corectitudinea plasarilor si viteza de raspuns. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_a2d0888413ad3baa481c35098e966c6b3}{Mistakes}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Numarul de incercari invalide de a plasa o coroana, conform regulilor de validare imediata. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_afb8e2fae0f26f5173c63b1d4512f6af0}{Is\+Victory}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Indicator boolean care devine true atunci cand toate restrictiile de pe tabla au fost satisfacute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestioneaza starea logica si statistica a unui joc, centralizand informatiile despre tabla, scor si erori. Aceasta clasa este utilizata de motorul de joc pentru a urmari progresul utilizatorului. 
+
+\label{class_crowns_game_1_1_application_1_1_game_state_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_aea2148db98d050903586eba7a70666ff}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}!GameState@{GameState}}
+\index{GameState@{GameState}!CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+\doxysubsubsection{\texorpdfstring{GameState()}{GameState()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_state_aea2148db98d050903586eba7a70666ff} 
+Crowns\+Game.\+Application.\+Game\+State.\+Game\+State (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_game_state_ab171e1dcbaa7105f46d2cfe34a22b66b}{Board}}}]{board}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializeaza o noua stare de joc, setand scorul si greselile la valorile de baza si legand tabla de joc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em board} & Obiectul de tip Board care reprezinta structura curenta a puzzle-\/ului.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_application_1_1_game_state_doc-property-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_ab171e1dcbaa7105f46d2cfe34a22b66b}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}!Board@{Board}}
+\index{Board@{Board}!CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+\doxysubsubsection{\texorpdfstring{Board}{Board}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_state_ab171e1dcbaa7105f46d2cfe34a22b66b} 
+Board Crowns\+Game.\+Application.\+Game\+State.\+Board\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Referinta catre instanta tablei de joc pe care se efectueaza mutarile in sesiunea curenta. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_afb8e2fae0f26f5173c63b1d4512f6af0}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}!IsVictory@{IsVictory}}
+\index{IsVictory@{IsVictory}!CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+\doxysubsubsection{\texorpdfstring{IsVictory}{IsVictory}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_state_afb8e2fae0f26f5173c63b1d4512f6af0} 
+bool Crowns\+Game.\+Application.\+Game\+State.\+Is\+Victory\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Indicator boolean care devine true atunci cand toate restrictiile de pe tabla au fost satisfacute. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_a2d0888413ad3baa481c35098e966c6b3}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}!Mistakes@{Mistakes}}
+\index{Mistakes@{Mistakes}!CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+\doxysubsubsection{\texorpdfstring{Mistakes}{Mistakes}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_state_a2d0888413ad3baa481c35098e966c6b3} 
+int Crowns\+Game.\+Application.\+Game\+State.\+Mistakes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Numarul de incercari invalide de a plasa o coroana, conform regulilor de validare imediata. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_game_state_a1b38c9ea5a8f79fa7691545dd8351264}\index{CrownsGame.Application.GameState@{CrownsGame.Application.GameState}!Score@{Score}}
+\index{Score@{Score}!CrownsGame.Application.GameState@{CrownsGame.Application.GameState}}
+\doxysubsubsection{\texorpdfstring{Score}{Score}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_game_state_a1b38c9ea5a8f79fa7691545dd8351264} 
+int Crowns\+Game.\+Application.\+Game\+State.\+Score\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Valoarea numerica a punctajului acumulat, influentata de corectitudinea plasarilor si viteza de raspuns. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Application/\+\+Application/\+\doxymbox{\hyperlink{_game_state_8cs}{Game\+State.\+cs}}\end{DoxyCompactItemize}

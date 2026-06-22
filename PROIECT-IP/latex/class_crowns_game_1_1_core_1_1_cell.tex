@@ -1,0 +1,94 @@
+\doxysection{Crowns\+Game.\+Core.\+Cell Class Reference}
+\hypertarget{class_crowns_game_1_1_core_1_1_cell}{}\label{class_crowns_game_1_1_core_1_1_cell}\index{CrownsGame.Core.Cell@{CrownsGame.Core.Cell}}
+
+
+Reprezinta o unitate individuala pe tabla de joc, pastrand apartenenta la o regiune si starea curenta.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell_a1860804461eeac80f5694c8c7005c1b9}{Cell}} (int region\+Id)
+\begin{DoxyCompactList}\small\item\em Construieste o celula si o asociaza unei regiuni specifice. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell_a97f884d09fd6d2880d82f16d9c3d2920}{Initialize\+Region}} (int new\+Region\+Id)
+\begin{DoxyCompactList}\small\item\em Modifica manual regiunea celulei. Utilizat in algoritmii de generare a tablei. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell_ab4bcc88607df23b74ec98ed6bfbd60a3}{Region\+Id}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Identificatorul unic al regiunii colorate. Folosit pentru validarea regulilor de proximitate. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} \doxymbox{\hyperlink{class_crowns_game_1_1_core_1_1_cell_a193e80ceced19497f95e221595174bd7}{State}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Starea logica actuala a celulei. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezinta o unitate individuala pe tabla de joc, pastrand apartenenta la o regiune si starea curenta. 
+
+\label{class_crowns_game_1_1_core_1_1_cell_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_a1860804461eeac80f5694c8c7005c1b9}\index{CrownsGame.Core.Cell@{CrownsGame.Core.Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!CrownsGame.Core.Cell@{CrownsGame.Core.Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_cell_a1860804461eeac80f5694c8c7005c1b9} 
+Crowns\+Game.\+Core.\+Cell.\+Cell (\begin{DoxyParamCaption}\item[{int}]{region\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construieste o celula si o asociaza unei regiuni specifice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em region\+Id} & ID-\/ul regiunii initiale.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_core_1_1_cell_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_a97f884d09fd6d2880d82f16d9c3d2920}\index{CrownsGame.Core.Cell@{CrownsGame.Core.Cell}!InitializeRegion@{InitializeRegion}}
+\index{InitializeRegion@{InitializeRegion}!CrownsGame.Core.Cell@{CrownsGame.Core.Cell}}
+\doxysubsubsection{\texorpdfstring{InitializeRegion()}{InitializeRegion()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_cell_a97f884d09fd6d2880d82f16d9c3d2920} 
+void Crowns\+Game.\+Core.\+Cell.\+Initialize\+Region (\begin{DoxyParamCaption}\item[{int}]{new\+Region\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica manual regiunea celulei. Utilizat in algoritmii de generare a tablei. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Region\+Id} & Noul identificator de regiune.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_core_1_1_cell_doc-property-members}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_ab4bcc88607df23b74ec98ed6bfbd60a3}\index{CrownsGame.Core.Cell@{CrownsGame.Core.Cell}!RegionId@{RegionId}}
+\index{RegionId@{RegionId}!CrownsGame.Core.Cell@{CrownsGame.Core.Cell}}
+\doxysubsubsection{\texorpdfstring{RegionId}{RegionId}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_cell_ab4bcc88607df23b74ec98ed6bfbd60a3} 
+int Crowns\+Game.\+Core.\+Cell.\+Region\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Identificatorul unic al regiunii colorate. Folosit pentru validarea regulilor de proximitate. 
+
+\Hypertarget{class_crowns_game_1_1_core_1_1_cell_a193e80ceced19497f95e221595174bd7}\index{CrownsGame.Core.Cell@{CrownsGame.Core.Cell}!State@{State}}
+\index{State@{State}!CrownsGame.Core.Cell@{CrownsGame.Core.Cell}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_core_1_1_cell_a193e80ceced19497f95e221595174bd7} 
+\doxymbox{\hyperlink{namespace_crowns_game_1_1_core_afa4bcbb7ed026fd9bd971b324e61e881}{Cell\+State}} Crowns\+Game.\+Core.\+Cell.\+State\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Starea logica actuala a celulei. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Core/\+\+Core/\+\doxymbox{\hyperlink{_cell_8cs}{Cell.\+cs}}\end{DoxyCompactItemize}

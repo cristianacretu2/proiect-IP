@@ -1,0 +1,275 @@
+\doxysection{Crowns\+Game.\+Tests.\+Game\+Logic\+Tests Class Reference}
+\hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests}{}\label{class_crowns_game_1_1_tests_1_1_game_logic_tests}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+
+
+Clasa de testare unitara pentru verificarea corectitudinii structurii \doxylink{class_crowns_game_1_1_core_1_1_board}{Board}, a regulilor implementate in \doxylink{class_crowns_game_1_1_logic_1_1_validator}{Validator} si a procesului de generare a tablei.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a300efe559a2ad1ec23a4a62c40d112e8}{Test\+\_\+\+Board\+Initialization\+\_\+\+Properties\+Should\+Match}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca proprietatile de baza ale tablei sunt setate corect la instantiere. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00272b827844bb0fcfb24f17415b6e01}{Test\+\_\+\+Board\+Initialization\+\_\+\+Different\+Sizes}} (int size, int crowns)
+\begin{DoxyCompactList}\small\item\em Testeaza initializarea cu diverse dimensiuni si configuratii de coroane. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9c748a95a01c26a6f7d91e641fc656bc}{Test\+\_\+\+Board\+Initialization\+\_\+\+All\+Cells\+Start\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Asigura ca toate celulele noi au starea initiala Empty. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a75f1e137e2ffd278b3a470a695290a1c}{Test\+\_\+\+Get\+Cell\+\_\+\+Should\+Return\+Initialized\+Cell}} (int r, int c)
+\begin{DoxyCompactList}\small\item\em Verifica daca Get\+Cell returneaza o celula valida pentru diverse coordonate. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_aeb9c75ea6af08d93c835316dde6adf69}{Test\+\_\+\+Get\+Cell\+\_\+\+Should\+Return\+Correct\+Region\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca regiunile sunt returnate corect pentru configuratia Multi\+Region. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_ae49d79e8fe88d424f7fd27090473e9e9}{Test\+\_\+\+Set\+Cell\+State\+\_\+\+Should\+Update\+State\+Correctly}} ()
+\begin{DoxyCompactList}\small\item\em Testeaza daca plasarea unei coroane actualizeaza corect starea celulei. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a371eac96ef735944a45a0685c71f145f}{Test\+\_\+\+Set\+Cell\+State\+\_\+\+Marked\+State}} ()
+\begin{DoxyCompactList}\small\item\em Verifica functionalitatea de marcare (X) a unei celule. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1b4e4cf34e7d3273161ee8b72925342d}{Test\+\_\+\+Set\+Cell\+State\+\_\+\+Reset\+To\+Empty}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca o celula poate fi resetata la starea Empty. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_aaf1ecb13f03ad0424dbf39a6f6cbddee}{Test\+\_\+\+Set\+Cell\+State\+\_\+\+Does\+Not\+Affect\+Other\+Cells}} ()
+\begin{DoxyCompactList}\small\item\em Asigura ca modificarea unei celule nu afecteaza starea celorlalte celule din jur. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a0d77c134c32174e697c324d64e85b082}{Test\+\_\+\+Clone\+\_\+\+Should\+Create\+Deep\+Copy}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca metoda Clone realizeaza un Deep Copy (copie in profunzime). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a47a5a581551951d2fadd4196b6fc98a3}{Test\+\_\+\+Clone\+\_\+\+Modifying\+Clone\+Does\+Not\+Affect\+Original}} ()
+\begin{DoxyCompactList}\small\item\em Confirma ca schimbarile efectuate pe clona nu se reflecta in instanta originala. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a37a7d2435b5fd1cdac4ffed40fba5c6b}{Test\+\_\+\+Clone\+\_\+\+Preserves\+Region\+Ids}} ()
+\begin{DoxyCompactList}\small\item\em Asigura ca ID-\/urile de regiune sunt conservate dupa clonare. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a25b993c0005bc43c5272b1ee418c4516}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Adjacent\+Crowns}} ()
+\begin{DoxyCompactList}\small\item\em Testeaza regula care interzice plasarea coroanelor in celule adiacente. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a511df74b1efe847b3b9db161d3ba62b5}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+All\+Eight\+Neighbors}} (int nr, int nc)
+\begin{DoxyCompactList}\small\item\em Verifica daca toti cei 8 vecini ai unei coroane sunt blocati pentru mutari noi. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_ad50b7de6c982c831140c5defed76d1b6}{Test\+\_\+\+Validator\+\_\+\+Should\+Allow\+Non\+Adjacent\+Crown}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca plasarea unei coroane la o distanta sigura este permisa. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a30f4a2487f3d0057c8b8909898637bc2}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Second\+Crown\+On\+Same\+Row\+\_\+\+When\+Limit\+Is\+One}} ()
+\begin{DoxyCompactList}\small\item\em Testeaza respingerea unei a doua coroane pe acelasi rand cand limita este 1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9f038ef41018538d54241720080e709b}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Second\+Crown\+On\+Same\+Col\+\_\+\+When\+Limit\+Is\+One}} ()
+\begin{DoxyCompactList}\small\item\em Testeaza respingerea unei a doua coroane pe aceeasi coloana cand limita este 1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a22d60a77b0ce8b95ee616370dafa2b4a}{Test\+\_\+\+Validator\+\_\+\+Should\+Allow\+Second\+Crown\+On\+Same\+Row\+\_\+\+When\+Limit\+Is\+Two}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca validatorul permite corect 2 coroane pe rand cand strategia o cere. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a483b6dd454846522616e6b53c61f78b5}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Crown\+In\+Full\+Region}} ()
+\begin{DoxyCompactList}\small\item\em Verifica daca validatorul blocheaza plasarea in regiuni care au atins deja cota de coroane. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00a2596e509c40615a52c4d072434f0b}{Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Placing\+On\+Existing\+Crown}} ()
+\begin{DoxyCompactList}\small\item\em Asigura ca nu se poate suprascrie o coroana existenta. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1f50014f50a2bde1ae6fb56f9d15a493}{Test\+\_\+\+Validator\+\_\+\+Corner\+Cell\+\_\+\+Should\+Be\+Valid\+On\+Empty\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Verifica validitatea plasarii in colturi pe o tabla goala. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa de testare unitara pentru verificarea corectitudinii structurii \doxylink{class_crowns_game_1_1_core_1_1_board}{Board}, a regulilor implementate in \doxylink{class_crowns_game_1_1_logic_1_1_validator}{Validator} si a procesului de generare a tablei. 
+
+\label{class_crowns_game_1_1_tests_1_1_game_logic_tests_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9c748a95a01c26a6f7d91e641fc656bc}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_BoardInitialization\_AllCellsStartEmpty@{Test\_BoardInitialization\_AllCellsStartEmpty}}
+\index{Test\_BoardInitialization\_AllCellsStartEmpty@{Test\_BoardInitialization\_AllCellsStartEmpty}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_BoardInitialization\_AllCellsStartEmpty()}{Test\_BoardInitialization\_AllCellsStartEmpty()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9c748a95a01c26a6f7d91e641fc656bc} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Board\+Initialization\+\_\+\+All\+Cells\+Start\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asigura ca toate celulele noi au starea initiala Empty. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00272b827844bb0fcfb24f17415b6e01}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_BoardInitialization\_DifferentSizes@{Test\_BoardInitialization\_DifferentSizes}}
+\index{Test\_BoardInitialization\_DifferentSizes@{Test\_BoardInitialization\_DifferentSizes}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_BoardInitialization\_DifferentSizes()}{Test\_BoardInitialization\_DifferentSizes()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00272b827844bb0fcfb24f17415b6e01} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Board\+Initialization\+\_\+\+Different\+Sizes (\begin{DoxyParamCaption}\item[{int}]{size}{, }\item[{int}]{crowns}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Testeaza initializarea cu diverse dimensiuni si configuratii de coroane. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a300efe559a2ad1ec23a4a62c40d112e8}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_BoardInitialization\_PropertiesShouldMatch@{Test\_BoardInitialization\_PropertiesShouldMatch}}
+\index{Test\_BoardInitialization\_PropertiesShouldMatch@{Test\_BoardInitialization\_PropertiesShouldMatch}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_BoardInitialization\_PropertiesShouldMatch()}{Test\_BoardInitialization\_PropertiesShouldMatch()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a300efe559a2ad1ec23a4a62c40d112e8} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Board\+Initialization\+\_\+\+Properties\+Should\+Match (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca proprietatile de baza ale tablei sunt setate corect la instantiere. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a47a5a581551951d2fadd4196b6fc98a3}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Clone\_ModifyingCloneDoesNotAffectOriginal@{Test\_Clone\_ModifyingCloneDoesNotAffectOriginal}}
+\index{Test\_Clone\_ModifyingCloneDoesNotAffectOriginal@{Test\_Clone\_ModifyingCloneDoesNotAffectOriginal}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Clone\_ModifyingCloneDoesNotAffectOriginal()}{Test\_Clone\_ModifyingCloneDoesNotAffectOriginal()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a47a5a581551951d2fadd4196b6fc98a3} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Clone\+\_\+\+Modifying\+Clone\+Does\+Not\+Affect\+Original (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Confirma ca schimbarile efectuate pe clona nu se reflecta in instanta originala. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a37a7d2435b5fd1cdac4ffed40fba5c6b}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Clone\_PreservesRegionIds@{Test\_Clone\_PreservesRegionIds}}
+\index{Test\_Clone\_PreservesRegionIds@{Test\_Clone\_PreservesRegionIds}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Clone\_PreservesRegionIds()}{Test\_Clone\_PreservesRegionIds()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a37a7d2435b5fd1cdac4ffed40fba5c6b} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Clone\+\_\+\+Preserves\+Region\+Ids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asigura ca ID-\/urile de regiune sunt conservate dupa clonare. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a0d77c134c32174e697c324d64e85b082}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Clone\_ShouldCreateDeepCopy@{Test\_Clone\_ShouldCreateDeepCopy}}
+\index{Test\_Clone\_ShouldCreateDeepCopy@{Test\_Clone\_ShouldCreateDeepCopy}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Clone\_ShouldCreateDeepCopy()}{Test\_Clone\_ShouldCreateDeepCopy()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a0d77c134c32174e697c324d64e85b082} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Clone\+\_\+\+Should\+Create\+Deep\+Copy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca metoda Clone realizeaza un Deep Copy (copie in profunzime). 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_aeb9c75ea6af08d93c835316dde6adf69}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_GetCell\_ShouldReturnCorrectRegionId@{Test\_GetCell\_ShouldReturnCorrectRegionId}}
+\index{Test\_GetCell\_ShouldReturnCorrectRegionId@{Test\_GetCell\_ShouldReturnCorrectRegionId}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_GetCell\_ShouldReturnCorrectRegionId()}{Test\_GetCell\_ShouldReturnCorrectRegionId()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_aeb9c75ea6af08d93c835316dde6adf69} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Get\+Cell\+\_\+\+Should\+Return\+Correct\+Region\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca regiunile sunt returnate corect pentru configuratia Multi\+Region. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a75f1e137e2ffd278b3a470a695290a1c}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_GetCell\_ShouldReturnInitializedCell@{Test\_GetCell\_ShouldReturnInitializedCell}}
+\index{Test\_GetCell\_ShouldReturnInitializedCell@{Test\_GetCell\_ShouldReturnInitializedCell}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_GetCell\_ShouldReturnInitializedCell()}{Test\_GetCell\_ShouldReturnInitializedCell()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a75f1e137e2ffd278b3a470a695290a1c} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Get\+Cell\+\_\+\+Should\+Return\+Initialized\+Cell (\begin{DoxyParamCaption}\item[{int}]{r}{, }\item[{int}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca Get\+Cell returneaza o celula valida pentru diverse coordonate. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_aaf1ecb13f03ad0424dbf39a6f6cbddee}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_SetCellState\_DoesNotAffectOtherCells@{Test\_SetCellState\_DoesNotAffectOtherCells}}
+\index{Test\_SetCellState\_DoesNotAffectOtherCells@{Test\_SetCellState\_DoesNotAffectOtherCells}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_SetCellState\_DoesNotAffectOtherCells()}{Test\_SetCellState\_DoesNotAffectOtherCells()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_aaf1ecb13f03ad0424dbf39a6f6cbddee} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Set\+Cell\+State\+\_\+\+Does\+Not\+Affect\+Other\+Cells (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asigura ca modificarea unei celule nu afecteaza starea celorlalte celule din jur. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a371eac96ef735944a45a0685c71f145f}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_SetCellState\_MarkedState@{Test\_SetCellState\_MarkedState}}
+\index{Test\_SetCellState\_MarkedState@{Test\_SetCellState\_MarkedState}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_SetCellState\_MarkedState()}{Test\_SetCellState\_MarkedState()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a371eac96ef735944a45a0685c71f145f} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Set\+Cell\+State\+\_\+\+Marked\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica functionalitatea de marcare (X) a unei celule. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1b4e4cf34e7d3273161ee8b72925342d}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_SetCellState\_ResetToEmpty@{Test\_SetCellState\_ResetToEmpty}}
+\index{Test\_SetCellState\_ResetToEmpty@{Test\_SetCellState\_ResetToEmpty}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_SetCellState\_ResetToEmpty()}{Test\_SetCellState\_ResetToEmpty()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1b4e4cf34e7d3273161ee8b72925342d} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Set\+Cell\+State\+\_\+\+Reset\+To\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca o celula poate fi resetata la starea Empty. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_ae49d79e8fe88d424f7fd27090473e9e9}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_SetCellState\_ShouldUpdateStateCorrectly@{Test\_SetCellState\_ShouldUpdateStateCorrectly}}
+\index{Test\_SetCellState\_ShouldUpdateStateCorrectly@{Test\_SetCellState\_ShouldUpdateStateCorrectly}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_SetCellState\_ShouldUpdateStateCorrectly()}{Test\_SetCellState\_ShouldUpdateStateCorrectly()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_ae49d79e8fe88d424f7fd27090473e9e9} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Set\+Cell\+State\+\_\+\+Should\+Update\+State\+Correctly (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Testeaza daca plasarea unei coroane actualizeaza corect starea celulei. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1f50014f50a2bde1ae6fb56f9d15a493}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard@{Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard}}
+\index{Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard@{Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard()}{Test\_Validator\_CornerCell\_ShouldBeValidOnEmptyBoard()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a1f50014f50a2bde1ae6fb56f9d15a493} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Corner\+Cell\+\_\+\+Should\+Be\+Valid\+On\+Empty\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica validitatea plasarii in colturi pe o tabla goala. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_ad50b7de6c982c831140c5defed76d1b6}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldAllowNonAdjacentCrown@{Test\_Validator\_ShouldAllowNonAdjacentCrown}}
+\index{Test\_Validator\_ShouldAllowNonAdjacentCrown@{Test\_Validator\_ShouldAllowNonAdjacentCrown}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldAllowNonAdjacentCrown()}{Test\_Validator\_ShouldAllowNonAdjacentCrown()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_ad50b7de6c982c831140c5defed76d1b6} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Allow\+Non\+Adjacent\+Crown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca plasarea unei coroane la o distanta sigura este permisa. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a22d60a77b0ce8b95ee616370dafa2b4a}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo@{Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo}}
+\index{Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo@{Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo()}{Test\_Validator\_ShouldAllowSecondCrownOnSameRow\_WhenLimitIsTwo()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a22d60a77b0ce8b95ee616370dafa2b4a} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Allow\+Second\+Crown\+On\+Same\+Row\+\_\+\+When\+Limit\+Is\+Two (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca validatorul permite corect 2 coroane pe rand cand strategia o cere. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a25b993c0005bc43c5272b1ee418c4516}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectAdjacentCrowns@{Test\_Validator\_ShouldRejectAdjacentCrowns}}
+\index{Test\_Validator\_ShouldRejectAdjacentCrowns@{Test\_Validator\_ShouldRejectAdjacentCrowns}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectAdjacentCrowns()}{Test\_Validator\_ShouldRejectAdjacentCrowns()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a25b993c0005bc43c5272b1ee418c4516} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Adjacent\+Crowns (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Testeaza regula care interzice plasarea coroanelor in celule adiacente. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a511df74b1efe847b3b9db161d3ba62b5}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectAllEightNeighbors@{Test\_Validator\_ShouldRejectAllEightNeighbors}}
+\index{Test\_Validator\_ShouldRejectAllEightNeighbors@{Test\_Validator\_ShouldRejectAllEightNeighbors}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectAllEightNeighbors()}{Test\_Validator\_ShouldRejectAllEightNeighbors()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a511df74b1efe847b3b9db161d3ba62b5} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+All\+Eight\+Neighbors (\begin{DoxyParamCaption}\item[{int}]{nr}{, }\item[{int}]{nc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca toti cei 8 vecini ai unei coroane sunt blocati pentru mutari noi. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a483b6dd454846522616e6b53c61f78b5}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectCrownInFullRegion@{Test\_Validator\_ShouldRejectCrownInFullRegion}}
+\index{Test\_Validator\_ShouldRejectCrownInFullRegion@{Test\_Validator\_ShouldRejectCrownInFullRegion}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectCrownInFullRegion()}{Test\_Validator\_ShouldRejectCrownInFullRegion()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a483b6dd454846522616e6b53c61f78b5} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Crown\+In\+Full\+Region (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica daca validatorul blocheaza plasarea in regiuni care au atins deja cota de coroane. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00a2596e509c40615a52c4d072434f0b}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectPlacingOnExistingCrown@{Test\_Validator\_ShouldRejectPlacingOnExistingCrown}}
+\index{Test\_Validator\_ShouldRejectPlacingOnExistingCrown@{Test\_Validator\_ShouldRejectPlacingOnExistingCrown}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectPlacingOnExistingCrown()}{Test\_Validator\_ShouldRejectPlacingOnExistingCrown()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a00a2596e509c40615a52c4d072434f0b} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Placing\+On\+Existing\+Crown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asigura ca nu se poate suprascrie o coroana existenta. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9f038ef41018538d54241720080e709b}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne@{Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne}}
+\index{Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne@{Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne()}{Test\_Validator\_ShouldRejectSecondCrownOnSameCol\_WhenLimitIsOne()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a9f038ef41018538d54241720080e709b} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Second\+Crown\+On\+Same\+Col\+\_\+\+When\+Limit\+Is\+One (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Testeaza respingerea unei a doua coroane pe aceeasi coloana cand limita este 1. 
+
+\Hypertarget{class_crowns_game_1_1_tests_1_1_game_logic_tests_a30f4a2487f3d0057c8b8909898637bc2}\index{CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}!Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne@{Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne}}
+\index{Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne@{Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne}!CrownsGame.Tests.GameLogicTests@{CrownsGame.Tests.GameLogicTests}}
+\doxysubsubsection{\texorpdfstring{Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne()}{Test\_Validator\_ShouldRejectSecondCrownOnSameRow\_WhenLimitIsOne()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_tests_1_1_game_logic_tests_a30f4a2487f3d0057c8b8909898637bc2} 
+void Crowns\+Game.\+Tests.\+Game\+Logic\+Tests.\+Test\+\_\+\+Validator\+\_\+\+Should\+Reject\+Second\+Crown\+On\+Same\+Row\+\_\+\+When\+Limit\+Is\+One (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Testeaza respingerea unei a doua coroane pe acelasi rand cand limita este 1. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Tests/\+\doxymbox{\hyperlink{_unit_test1_8cs}{Unit\+Test1.\+cs}}\end{DoxyCompactItemize}

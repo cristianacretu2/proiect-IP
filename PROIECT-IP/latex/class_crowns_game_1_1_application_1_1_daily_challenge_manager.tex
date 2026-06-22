@@ -1,0 +1,160 @@
+\doxysection{Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager Class Reference}
+\hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager}{}\label{class_crowns_game_1_1_application_1_1_daily_challenge_manager}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+
+
+Coordoneaza sesiunile de joc cu timp limita, monitorizand progresul si declansand evenimente de final de timp.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a597e5248add7e80c8c223005c022d5be}{Daily\+Challenge\+Manager}} (int duration\+Seconds=120)
+\begin{DoxyCompactList}\small\item\em Configureaza managerul cu o durata specifica pentru provocare. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a2e782c71814578874ea8be24f921c1cb}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Reseteaza scorul si porneste numaratoarea inversa. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a0497e86df3dbf6d8a04af147e8f39119}{Stop}} ()
+\begin{DoxyCompactList}\small\item\em Opreste temporar sau definitiv cronometrul. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a7f6d24011a3df8890a2611c8211301a0}{Increment\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Incrementeaza numarul de victorii. Apelata cand un puzzle este finalizat corect. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a99cc3171a5de9e3926f3d27561baaddc}{Get\+Formatted\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Transforma secundele ramase intr-\/un format lizibil pentru utilizator (MM:\+SS). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a70c214bc06ee7620a17973993e2f5715}{Games\+Solved}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Numarul de jocuri rezolvate cu succes in sesiunea curenta. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a1bb10d1eedd5dac3f3ee3aa5a1078d4b}{Is\+Running}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\begin{DoxyCompactList}\small\item\em Indica daca cronometrul este activ in acest moment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ int $>$? \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_adda05c155f721cf6b56f8744231fbde6}{On\+Tick}}
+\begin{DoxyCompactList}\small\item\em Eveniment lansat la fiecare secunda pentru actualizarea interfetei. \end{DoxyCompactList}\item 
+Action? \doxymbox{\hyperlink{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a008f9a86cf465e7538131e05b9c40303}{On\+Time\+Up}}
+\begin{DoxyCompactList}\small\item\em Eveniment lansat cand timpul a expirat complet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Coordoneaza sesiunile de joc cu timp limita, monitorizand progresul si declansand evenimente de final de timp. 
+
+\label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-constructors}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a597e5248add7e80c8c223005c022d5be}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!DailyChallengeManager@{DailyChallengeManager}}
+\index{DailyChallengeManager@{DailyChallengeManager}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{DailyChallengeManager()}{DailyChallengeManager()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a597e5248add7e80c8c223005c022d5be} 
+Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Daily\+Challenge\+Manager (\begin{DoxyParamCaption}\item[{int}]{duration\+Seconds}{ = {\ttfamily 120}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configureaza managerul cu o durata specifica pentru provocare. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration\+Seconds} & Timpul total alocat, exprimat in secunde.\\
+\hline
+\end{DoxyParams}
+
+
+\label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-func-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a99cc3171a5de9e3926f3d27561baaddc}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!GetFormattedTime@{GetFormattedTime}}
+\index{GetFormattedTime@{GetFormattedTime}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{GetFormattedTime()}{GetFormattedTime()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a99cc3171a5de9e3926f3d27561baaddc} 
+string Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Get\+Formatted\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transforma secundele ramase intr-\/un format lizibil pentru utilizator (MM:\+SS). 
+
+\begin{DoxyReturn}{Returns}
+Un sir de caractere formatat.
+\end{DoxyReturn}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a7f6d24011a3df8890a2611c8211301a0}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!IncrementScore@{IncrementScore}}
+\index{IncrementScore@{IncrementScore}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{IncrementScore()}{IncrementScore()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a7f6d24011a3df8890a2611c8211301a0} 
+void Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Increment\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Incrementeaza numarul de victorii. Apelata cand un puzzle este finalizat corect. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a2e782c71814578874ea8be24f921c1cb}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!Start@{Start}}
+\index{Start@{Start}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a2e782c71814578874ea8be24f921c1cb} 
+void Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reseteaza scorul si porneste numaratoarea inversa. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a0497e86df3dbf6d8a04af147e8f39119}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!Stop@{Stop}}
+\index{Stop@{Stop}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a0497e86df3dbf6d8a04af147e8f39119} 
+void Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Opreste temporar sau definitiv cronometrul. 
+
+
+
+\label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-property-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a70c214bc06ee7620a17973993e2f5715}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!GamesSolved@{GamesSolved}}
+\index{GamesSolved@{GamesSolved}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{GamesSolved}{GamesSolved}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a70c214bc06ee7620a17973993e2f5715} 
+int Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Games\+Solved\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Numarul de jocuri rezolvate cu succes in sesiunea curenta. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a1bb10d1eedd5dac3f3ee3aa5a1078d4b}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{IsRunning}{IsRunning}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a1bb10d1eedd5dac3f3ee3aa5a1078d4b} 
+bool Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+Is\+Running\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indica daca cronometrul este activ in acest moment. 
+
+
+
+\label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-event-members}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_adda05c155f721cf6b56f8744231fbde6}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{OnTick}{OnTick}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_adda05c155f721cf6b56f8744231fbde6} 
+Action$<$int$>$? Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+On\+Tick}
+
+
+
+Eveniment lansat la fiecare secunda pentru actualizarea interfetei. 
+
+\Hypertarget{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a008f9a86cf465e7538131e05b9c40303}\index{CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}!OnTimeUp@{OnTimeUp}}
+\index{OnTimeUp@{OnTimeUp}!CrownsGame.Application.DailyChallengeManager@{CrownsGame.Application.DailyChallengeManager}}
+\doxysubsubsection{\texorpdfstring{OnTimeUp}{OnTimeUp}}
+{\footnotesize\ttfamily \label{class_crowns_game_1_1_application_1_1_daily_challenge_manager_a008f9a86cf465e7538131e05b9c40303} 
+Action? Crowns\+Game.\+Application.\+Daily\+Challenge\+Manager.\+On\+Time\+Up}
+
+
+
+Eveniment lansat cand timpul a expirat complet. 
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Crowns\+Game/\+\+Crowns\+Game.\+Application/\+\+Application/\+\doxymbox{\hyperlink{_daily_challenge_manager_8cs}{Daily\+Challenge\+Manager.\+cs}}\end{DoxyCompactItemize}

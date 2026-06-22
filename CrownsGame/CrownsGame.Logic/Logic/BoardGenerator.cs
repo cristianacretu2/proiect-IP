@@ -32,7 +32,7 @@ namespace CrownsGame.Logic
             List<Position> crownPositions = PlaceCrowns(size, crownsPerGroup);
             
             if (crownPositions == null) 
-                return Generate(size, crownsPerGroup); // Reincercare in caz de esec (probabilitate scazuta)
+                return Generate(size, crownsPerGroup); // Reincercare in caz de esec
 
             // Pas 2: Generam regiunile geografice in jurul coroanelor plasate
             int[,] regionMap = GenerateRegions(size, crownsPerGroup, crownPositions);
@@ -168,7 +168,7 @@ namespace CrownsGame.Logic
                 currentRegionId++;
             }
 
-            // Pasul 2: Expansiune prin algoritmul BFS pentru a ocupa celulele ramase (Empty)
+            // Pasul 2: Algoritm BFS pentru a ocupa celulele ramase (Empty)
             List<Position> frontier = new List<Position>(queue);
             int[] dr = { -1, 1, 0, 0 };
             int[] dc = { 0, 0, -1, 1 };
