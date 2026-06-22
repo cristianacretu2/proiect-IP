@@ -22,7 +22,7 @@ The game presents a grid divided into colored regions. The player places crowns 
 - No two crowns are adjacent (including diagonally)
 
 <p align="center">
-  <img src="/Users/cristianacretu/Desktop/proiect-IP/screen.png" width="300" alt="alt text">
+  <img src="screen.png" width="300" alt="alt text">
 </p>
 
 ## Features
